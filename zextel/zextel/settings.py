@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'main',
+    'ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -127,3 +128,11 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'
+CKEDITOR_UPLOAD_PATH = '/uploads/'
+
+CKEDITOR_CONFIGS = {
+    'default': {
+    'toolbar': 'none'
+    },
+}
