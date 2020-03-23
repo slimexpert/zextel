@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'main',
+    'about',
     'ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',

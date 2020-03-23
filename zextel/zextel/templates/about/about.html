@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+    <!-- Блок Верхнее меню
+    ============================================= -->
+    {% block top_menu %}
+    <div id="top-bar">
+      <div class="container clearfix">
+        <div class="col_half nobottommargin">
+          <!-- Top Links
+          ============================================= -->
+          <div class="top-links">
+            <ul>
+              <li><a href="/">Частным клиентам</a></li>
+              <li><a href="/business">Для Бизнеса</a></li>
+              <li><a style="background-color: #EEE;" href="/about">О компании</a></li>
+              <li><a href="/contact">Контакты</a></li>
+            </ul>
+          </div><!-- .top-links end -->
+
+        </div>
+
+        <div class="col_half fright col_last nobottommargin">
+          <!-- Top Social
+          ============================================= -->
+          <div id="top-social">
+            <ul>
+              <li><a href="tel:+78124485323" class="si-call"><span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+7 (812) 4485323</span></a></li>
+              <li><a href="mailto:info@zextel.ru" class="si-email3"><span class="ts-icon"><i class="icon-email3"></i></span><span class="ts-text">info@zextel.ru</span></a></li>
+            </ul>
+          </div><!-- #top-social end -->
+        </div>
+      </div>
+    </div>  
+    {% endblock %}<!-- #конец top_menu-->
+
+<!-- Header
+    ============================================= -->
+{% block header_menu %}
+    <header id="header" class="full-header">
+      <div id="header-wrap">
+        <div class="container clearfix">
+          <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+          <!-- Logo
+          ============================================= -->
+          <div id="logo">
+            <a href="/" class="standard-logo" data-dark-logo="https://slimexpert.github.io/zextel/static/images/logo-dark.png"><img src="https://slimexpert.github.io/zextel/static/images/logo-dark.png" alt="Canvas Logo"></a>
+            <a href="/" class="retina-logo" data-dark-logo="https://slimexpert.github.io/zextel/static/images/logo-dark@2x.png"><img src="https://slimexpert.github.io/zextel/static/images/logo-dark@2x.png" alt="Canvas Logo"></a>
+          </div><!-- #logo end -->
+
+          <!-- Primary Navigation
+          ============================================= -->
+          <nav id="primary-menu" class="style-4">
+            <ul>
+              <li class="current"><a href="/about"><div>О компании</div></a></li>
+              <li><a href="news/"><div>Новости</div></a></li>
+              <li><a href="#"><div>Документы</div></a></li>
+              <li><a href="#"><div>Контакты</div></a></li>
+            </ul>
+           </nav><!-- #primary-menu end -->
+
+        </div>
+      </div>
+    </header>
+{% endblock %}<!-- #конец header_menu-->
+
+<!-- Блок название страницы
+    ============================================= -->
+{% block page_title %}
+<section id="page-title">
+	<div class="container clearfix">
+		<h1>О компании ZEXTEL</h1>
+ 		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="/">Главная</a></li>
+			<li class="breadcrumb-item active" aria-current="page">О компании</li>
+		</ol>
+	</div>
+</section>
+{% endblock %}<!-- #конец блока название страниц-->
+
+<!-- Блок контент
+	============================================= --> 
+{% block content %} 
+	<div class="container clearfix">
+		<div class="row">
+			<div class="col-lg-3 bottommargin">
+				<img data-animate="fadeInLeftBig" src="https://slimexpert.github.io/zextel/static/images/logo-400x400.png" alt="ZEXTEL" class="center-block">
+			</div>
+			<div class="col-lg-9 bottommargin">
+				<blockquote><span>Стремление к развитию, позволяет нам создавать новые возможности для наших клиентов, решать любые задачи – даже те, которые возникнут в будущем. Мы делаем сложные вещи простыми, а передовые технологии привычными.<span></blockquote>
+
+				<blockquote><span>Делая современные услуги связи максимально понятными и простыми, мы избавляем наших клиентов от необходимости тратить время и силы, на изучение деталей технологий.<span></blockquote>
+
+				<span>Штат компания ZEXTEL сформирован исключительно из профессионалов с огромным опытом работы в данной сфере, мы предоставляем полный спектр услуг в области системной интеграции – от проектирования сетей до оказания услуг конечным потребителям, компании входящие в ZEXTEL имеют все необходимые лицензии (Телекоммуникационные, МЧС, и т.д.) и членство в саморегулируемых организациях для оказания соответствующих услуг.<span>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}<!-- Конец блока контент-->

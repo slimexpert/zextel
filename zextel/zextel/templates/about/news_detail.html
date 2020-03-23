@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+<!-- Header
+    ============================================= -->
+{% block header_menu %}
+    <header id="header" class="full-header">
+      <div id="header-wrap">
+        <div class="container clearfix">
+          <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+          <!-- Logo
+          ============================================= -->
+          <div id="logo">
+            <a href="/" class="standard-logo" data-dark-logo="https://slimexpert.github.io/zextel/static/images/logo-dark.png"><img src="https://slimexpert.github.io/zextel/static/images/logo-dark.png" alt="Canvas Logo"></a>
+            <a href="/" class="retina-logo" data-dark-logo="https://slimexpert.github.io/zextel/static/images/logo-dark@2x.png"><img src="https://slimexpert.github.io/zextel/static/images/logo-dark@2x.png" alt="Canvas Logo"></a>
+          </div><!-- #logo end -->
+
+          <!-- Primary Navigation
+          ============================================= -->
+          <nav id="primary-menu" class="style-4">
+            <ul>
+              <li><a href="/about"><div>О компании</div></a></li>
+              <li class="current"><a href="/about/news"><div>Новости</div></a></li>
+              <li><a href="/about/docs"><div>Документы</div></a></li>
+              <li><a href="/about/contact"><div>Контакты</div></a></li>
+            </ul>
+           </nav><!-- #primary-menu end -->
+
+        </div>
+      </div>
+    </header>
+{% endblock %}<!-- #конец header_menu-->
+
+<!-- Блок название страницы
+    ============================================= -->
+
+{% block page_title %}
+<section id="page-title">
+	<div class="container clearfix">
+		<h1>Новости</h1>
+ 		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="/">Главная</a></li>
+      <li class="breadcrumb-item"><a href="/about">О компании</a></li>
+			<li class="breadcrumb-item active" aria-current="page">Новости</li>
+		</ol>
+	</div>
+</section>
+{% endblock %}<!-- #конец блока название страниц-->
+
+<!-- Блок контент
+	============================================= --> 
+{% block content %} 
+<div class="container clearfix">
+    <div><h4>{{det.new_title}}</h4></div>
+    <p><h5>{{det.pub_date}}</h5></p>
+    <span>{{det.new_title_text}}</span>
+    <span>{{det.new_text|safe}}</span>
+    
+  <div class="divider divider-center"><a href="#" data-scrollto="#header"><i class="icon-chevron-up"></i></a></div>
+</div>
+
+{% endblock %}<!-- Конец блока контент-->

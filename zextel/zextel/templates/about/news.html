@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+<!-- Header
+    ============================================= -->
+{% block header_menu %}
+    <header id="header" class="full-header">
+      <div id="header-wrap">
+        <div class="container clearfix">
+          <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+          <!-- Logo
+          ============================================= -->
+          <div id="logo">
+            <a href="/" class="standard-logo" data-dark-logo="https://slimexpert.github.io/zextel/static/images/logo-dark.png"><img src="https://slimexpert.github.io/zextel/static/images/logo-dark.png" alt="Canvas Logo"></a>
+            <a href="/" class="retina-logo" data-dark-logo="https://slimexpert.github.io/zextel/static/images/logo-dark@2x.png"><img src="https://slimexpert.github.io/zextel/static/images/logo-dark@2x.png" alt="Canvas Logo"></a>
+          </div><!-- #logo end -->
+
+          <!-- Primary Navigation
+          ============================================= -->
+          <nav id="primary-menu" class="style-4">
+            <ul>
+              <li><a href="/about"><div>О компании</div></a></li>
+              <li class="current"><a href="/about/news"><div>Новости</div></a></li>
+              <li><a href="/about/docs"><div>Документы</div></a></li>
+              <li><a href="/about/contact"><div>Контакты</div></a></li>
+            </ul>
+           </nav><!-- #primary-menu end -->
+
+        </div>
+      </div>
+    </header>
+{% endblock %}<!-- #конец header_menu-->
+
+<!-- Блок название страницы
+    ============================================= -->
+
+{% block page_title %}
+<section id="page-title">
+	<div class="container clearfix">
+		<h1>Новости</h1>
+ 		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="/">Главная</a></li>
+      <li class="breadcrumb-item"><a href="/about">О компании</a></li>
+			<li class="breadcrumb-item active" aria-current="page">Новости</li>
+		</ol>
+	</div>
+</section>
+{% endblock %}<!-- #конец блока название страниц-->
+
+<!-- Блок контент
+	============================================= --> 
+{% block content %} 
+<div class="container clearfix">
+  <ul class="testimonials-grid grid-3 clearfix">
+    {% for a in news_list %}
+      <li>
+        <div class="testimonial">
+          <div class="testi-image">
+            <h5 class="mb-0"><i class="icon-calendar3"></i></h5>
+          </div>
+          <div><span>{{a.pub_date}}</span></div>
+          <div><h5>{{a.new_title}}</h5></div>
+          <div class="testi-content">
+            <p>{{a.new_title_text}}</p>
+          <div class="tagcloud topmargin fright">
+            <a href="{% url 'about:detail' a.id %}">подробнее</a>
+          </div>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+{% endblock %}<!-- Конец блока контент-->
