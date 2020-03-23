@@ -54,8 +54,8 @@
               <li class="current"><a href="/"><div>Интернет</div></a></li>
               <li><a href="#"><div>Цифровое ТВ</div></a></li>
               <li><a href="#"><div>Подключиться</div></a></li>
+              <li><a href="#"><div>Предожения</div></a></li>
               <li><a href="#"><div>Оплата</div></a></li>
-              <li><a href="#"><div>Контакты</div></a></li>
               <li><a href="#"><div>Личный кабинет</div></a></li>
             </ul>
            </nav><!-- #primary-menu end -->
@@ -102,6 +102,8 @@
         </div>
 {% endblock %}<!-- #конец блока слайдера-->
 
+<!-- Блок тарифы
+    ============================================= --> 
 {% block main_tariff %} 
       <div class="fancy-title title-dotted-border title-center"><h3>Наши тарифы</h3></div>
         <div class="container clearfix">
@@ -328,5 +330,28 @@
             </div>
           </div>
         </div>
-
 {% endblock %}<!-- Конец блока тарифы -->
+
+<!-- Блок новости
+============================================= --> 
+{% block news_5 %} 
+        <div class="fancy-title title-dotted-border title-center">
+            <h3>Новости</h3>
+        </div>
+        <div class="container clearfix">
+          <div id="oc-fbox" class="owl-carousel fbox-carousel carousel-widget" data-margin="20" data-rewind="True" data-pagi="True" data-loop="True" data-items-xs="1" data-items-md="2" data-items-xl="3">
+            {% for a in news_list %}
+              <div class="oc-item">
+                <div class="card events-meta">
+                  <div class="card-header"><h5 class="mb-0"><i class="icon-calendar3"></i>  {{ a.pub_date }}</h5></div>
+                  <div class="card-body">
+                      <h5>{{ a.new_title }}</h5>
+                      <div>{{ a.new_title_text|safe }}</div> 
+                  </div>
+                    <a href="{% url 'about:detail' a.id %}" class="btn btn-light"><span>Подробнее</span></a>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+{% endblock %}<!-- Конец блока новости-->

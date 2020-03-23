@@ -32,9 +32,9 @@ def __str__(self):
 
 class document(models.Model):
 	doc_title = models.CharField('Заголовок документа', max_length=200)
-	doc_path = RichTextField('Полный путь до документа', default="https://slimexpert.github.io/zextel/pdf/")
+	doc_path = models.CharField('Полный путь до документа', default="https://slimexpert.github.io/zextel/pdf/", max_length=250)
 	doc_pub = models.DateTimeField('Дата публикации документа')
-	doc_show = models.BooleanField('Отображать вакансию на сайте', default=1)
+	doc_show = models.BooleanField('Отображать документ на сайте', default=1)
 
 def __str__(self):
     return self.new_title
