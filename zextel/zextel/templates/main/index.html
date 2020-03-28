@@ -66,13 +66,13 @@
 {% endblock %}<!-- #конец header_menu-->
 
 {% block slider %}
-    <section id="slider" class="slider-element slider-parallax swiper_wrapper clearfix" data-loop="true" data-autoplay="6000">
+    <section id="slider" class="slider-element slider-parallax swiper_wrapper clearfix" data-autoplay="6000">
       <div class="slider-parallax-inner">
         <div class="swiper-container swiper-parent">
           <div class="swiper-wrapper">
           	{% for i in sliders_show %}
-				{{ i.sl_text|safe}}
-			{% endfor %}
+				      {{ i.sl_text|safe}}
+			      {% endfor %}
           </div>
           <div class="slider-arrow-left"><i class="icon-angle-left"></i></div>
           <div class="slider-arrow-right"><i class="icon-angle-right"></i></div>

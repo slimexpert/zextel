@@ -7,4 +7,5 @@ urlpatterns = [
 	path('', views.main, name = 'about'),
 	path('news/', views.news, name = 'news'),
 	path('news/<int:new_id>/', views.detail, name = 'detail'),
+	path('docs/', views.docs, name = 'docs'),
 ]

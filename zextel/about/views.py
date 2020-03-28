@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import new
+from .models import new, document
 
 def main(request):
 	return render(request, 'about/about.html')
@@ -13,5 +13,8 @@ def detail(request, new_id):
 		det = new.objects.get(id = new_id)
 	except:
 		raise Http404("Новость не найдена")
-
 	return render(request, 'about/news_detail.html', {'det': det})
+
+def docs(request):
+	doc_list = document.objects.filter(doc_show='1')
+	return render(request, 'about/docs.html', {'doc_list': doc_list})

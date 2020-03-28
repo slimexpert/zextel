@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 
-
 <!-- Header
     ============================================= -->
 {% block header_menu %}
@@ -20,8 +19,8 @@
           <nav id="primary-menu" class="style-4">
             <ul>
               <li><a href="/about"><div>О компании</div></a></li>
-              <li class="current"><a href="/about/news"><div>Новости</div></a></li>
-              <li><a href="/about/docs"><div>Документы</div></a></li>
+              <li><a href="/about/news"><div>Новости</div></a></li>
+              <li class="current"><a href="/about/docs"><div>Документы</div></a></li>
               <li><a href="/about/jobs"><div>Вакансии</div></a></li>
             </ul>
            </nav><!-- #primary-menu end -->
@@ -35,28 +34,33 @@
     ============================================= -->
 
 {% block page_title %}
-<section id="page-title">
-	<div class="container clearfix">
-		<h1>Новости</h1>
- 		<ol class="breadcrumb">
-			<li class="breadcrumb-item"><a href="/">Главная</a></li>
-      <li class="breadcrumb-item"><a href="/about">О компании</a></li>
-			<li class="breadcrumb-item active" aria-current="page">Новости</li>
-		</ol>
-	</div>
-</section>
+  <section id="page-title">
+  	<div class="container clearfix">
+  		<h1>Документы</h1>
+   		<ol class="breadcrumb">
+  			<li class="breadcrumb-item"><a href="/">Главная</a></li>
+        <li class="breadcrumb-item"><a href="/about">О компании</a></li>
+  			<li class="breadcrumb-item active" aria-current="page">Документы</li>
+  		</ol>
+  	</div>
+  </section>
 {% endblock %}<!-- #конец блока название страниц-->
 
 <!-- Блок контент
 	============================================= --> 
 {% block content %} 
-<div class="container clearfix">
-    <div><h4>{{det.new_title}}</h4></div>
-    <p><h5>{{det.pub_date}}</h5></p>
-    <span>{{det.new_title_text}}</span>
-    <span>{{det.new_text|safe}}</span>
-    
-  <div class="divider divider-center"><a href="#" data-scrollto="#header"><i class="icon-chevron-up"></i></a></div>
-</div>
-
+  <div class="container clearfix">
+    <ul class="testimonials-grid grid-3 clearfix">
+      {% for a in doc_list %}
+        <li>
+          <div class="testimonial">
+            <div class="testi-image">
+              <h5 class="mb-0"><i class="icon-file-pdf1"></i></h5>
+            </div>
+            <div style="padding-top: 15px"><h5><a href="{{ a.doc_path }}" target="_blank">{{a.doc_title}}</a></h5></div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 {% endblock %}<!-- Конец блока контент-->
