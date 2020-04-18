@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+<!-- Header
+    ============================================= -->
+{% block header_menu %}
+    <header id="header" class="full-header">
+      <div id="header-wrap">
+        <div class="container clearfix">
+          <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+          <!-- Logo
+          ============================================= -->
+          <div id="logo">
+            <a href="/" class="standard-logo" data-dark-logo="https://slimexpert.github.io/zextel/static/images/logo-dark.png"><img src="https://slimexpert.github.io/zextel/static/images/logo-dark.png" alt="Canvas Logo"></a>
+            <a href="/" class="retina-logo" data-dark-logo="https://slimexpert.github.io/zextel/static/images/logo-dark@2x.png"><img src="https://slimexpert.github.io/zextel/static/images/logo-dark@2x.png" alt="Canvas Logo"></a>
+          </div><!-- #logo end -->
+
+          <!-- Primary Navigation
+          ============================================= -->
+          <nav id="primary-menu" class="style-4">
+            <ul>
+              <li><a href="/about"><div>О компании</div></a></li>
+              <li><a href="/about/news"><div>Новости</div></a></li>
+              <li><a href="/about/docs"><div>Документы</div></a></li>
+              <li class="current"><a href="/about/jobs"><div>Вакансии</div></a></li>
+            </ul>
+           </nav><!-- #primary-menu end -->
+
+        </div>
+      </div>
+    </header>
+{% endblock %}<!-- #конец header_menu-->
+
+<!-- Блок название страницы
+    ============================================= -->
+
+{% block page_title %}
+  <section id="page-title">
+  	<div class="container clearfix">
+  		<h1>Вакансии</h1>
+   		<ol class="breadcrumb">
+  			<li class="breadcrumb-item"><a href="/">Главная</a></li>
+        <li class="breadcrumb-item"><a href="/about">О компании</a></li>
+  			<li class="breadcrumb-item active" aria-current="page">Вакансии</li>
+  		</ol>
+  	</div>
+  </section>
+{% endblock %}<!-- #конец блока название страниц-->
+
+<!-- Блок контент
+	============================================= --> 
+{% block content %} 
+  <div class="container clearfix">
+    <div class="col_two_third">
+      <h3>Открытые вакансии</h3>
+      <div class="accordion clearfix" data-state="closed">
+        <div class="acctitle" style="color: #fe7745"><i class="acc-closed icon-line-plus"></i><i class="acc-open icon-line-minus"></i>Менеджер по продажам (B2C сегмент)</div>
+        <div class="acc_content clearfix">
+          <h5>Требования к кандидату</h5>
+          <div class="nobottommargin">
+            <ul class="iconlist">
+              <li><i class="icon-line-arrow-right"></i>Возраст от 20 до 40 лет;</li>
+              <li><i class="icon-line-arrow-right"></i>Успешный опыт личных продаж;</li>
+              <li><i class="icon-line-arrow-right"></i>Грамотная речь;</li>
+              <li><i class="icon-line-arrow-right"></i>Вежливая и доброжелательная манера общения;</li>
+              <li><i class="icon-line-arrow-right"></i>Активная жизненная позиция, желание расти и развиваться;</li>
+            </ul>
+          </div>
+          <h5>Должностные обязанности</h5>
+          <ul class="iconlist">
+              <li><i class="icon-line-arrow-right"></i>Конусультирование потенциальных клиентов-физических лиц по услугам компании (Интернет, ТВ);</li>
+              <li><i class="icon-line-arrow-right"></i>Прямые продажи услуг посредством подомовых обходов;</li>
+              <li><i class="icon-line-arrow-right"></i>Размещение рекламных материалов по закрепленной территории;</li>
+              <li><i class="icon-line-arrow-right"></i>Оформление заявок на подключение услуг абонентам;</li>
+              <li><i class="icon-line-arrow-right"></i>Ежедневное ведение фотоотчета, предоставление отчетности о выполненных работах непосредственному руководителю.</li>
+            </ul>
+          <h5>Условия работы</h5>
+          <ul class="iconlist">
+              <li><i class="icon-line-check"></i>Стабильная заработная палата + % с продаж</li>
+              <li><i class="icon-line-check"></i>График работы 5/2 с 09:00 до 19:00 с часовым перерывом на обед (сб и вс — выходные);</li>
+              <li><i class="icon-line-check"></i>Разъездной характер работы, только Всеволожский район (бензин оплачивается);</li>
+              <li><i class="icon-line-check"></i>Молодой, дружный и талантливый коллектив;</li>
+              <li><i class="icon-line-check"></i>Возможности для роста!</li>
+            </ul>
+        </div>
+
+        <div class="acctitle" style="color: #fe7745"><i class="acc-closed icon-line-plus"></i><i class="acc-open icon-line-minus"></i>Монтажник сетей связи (ВОЛС)</div>
+          <div class="acc_content clearfix">
+          <h5>Требования к кандидату</h5>
+          <div class="nobottommargin">
+            <ul class="iconlist">
+              <li><i class="icon-line-arrow-right"></i>Возраст от 20 до 45 лет;</li>
+              <li><i class="icon-line-arrow-right"></i>Среднетехническое профессиональное образование;</li>
+              <li><i class="icon-line-arrow-right"></i>Навыки работы с электроинструментом (перфоратор, дрель);</li>
+              <li><i class="icon-line-arrow-right"></i>Наличие водительского удостоверения, приветствуется.</li>
+              <li><i class="icon-line-arrow-right"></i>Отвественность.</li>
+            </ul>
+          </div>
+          <h5>Должностные обязанности</h5>
+          <ul class="iconlist">
+              <li><i class="icon-line-arrow-right"></i>Выполнение работ по строительству внешних сетей связи (xPON);</li>
+              <li><i class="icon-line-arrow-right"></i>Выполнение работ по строительству внутренних сетей связи (ЛВС, СКС, ОПС);</li>
+          </ul>
+          <h5>Условия работы</h5>
+          <ul class="iconlist">
+              <li><i class="icon-line-check"></i>Стабильная заработная палата</li>
+              <li><i class="icon-line-check"></i>График работы 5/2 с 09:00 до 19:00 (сб и вс — выходные);</li>
+              <li><i class="icon-line-check"></i>Разъездной характер работы (автотранспорт наш);</li>
+              <li><i class="icon-line-check"></i>Переработки оплачиваются;</li>
+              <li><i class="icon-line-check"></i>Испытательный срок (в зависимости от вашей подготовки) 1-2 месяца.</li>
+            </ul>
+          <p>Ещё нет опыта работы в данной сфере, но есть большое желание попробовать свои силы? Приходи к нам!<br />Мы согласны пробовать вместе! Начало работы только с опытным наставником - гарантируем.</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="col_one_third col_last">
+      <div class="col_one">
+        <div class="feature-box fbox-outline fbox-border fbox-dark fbox-effect noborder">
+          <div class="fbox-icon">
+            <a href="#"><i class="icon-line2-action-redo i-alt"></i></a>
+              </div>
+              <h3>Уважаемый соискатель</h3>
+              <p>Ознакомтесь с нашими вакансиями и выбирете ту которая Вам подходит!</p>
+            </div>
+      </div>
+      <br />
+      <div class="col_one">
+        <div class="feature-box fbox-outline fbox-border fbox-dark fbox-effect noborder">
+          <div class="fbox-icon">
+            <a href="#"><i class="icon-line2-home i-alt"></i></a>
+              </div>
+              <h3>Как с нами связаться</h3>
+              <p>Мы отвечаем на телефон <br /> <a href="tel:+78124485323">+7(812) 448-53-23</a> <br /> с 9:00 до 21:00 ежедневно. <br />Вы можете выслать свое резюме на адрес электронной почты <a href="mailto:info@zextel.ru">info@zextel.ru</a> <br /> Ждем Вас по адресу: <a href="/contact"> Л.О. Всеволожский р-н, п. Романовка, д. 20</a></p>
+            </div>
+      </div>
+    </div>
+
+<!--    <ul class="testimonials-grid grid-3 clearfix">
+      {% for a in doc_list %}
+        <li>
+          <div class="testimonial">
+            <div class="testi-image">
+              <h5 class="mb-0"><i class="icon-file-pdf1"></i></h5>
+            </div>
+            <div style="padding-top: 15px"><h5><a href="{{ a.doc_path }}" target="_blank">{{a.doc_title}}</a></h5></div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+-->
+  </div>
+{% endblock %}<!-- Конец блока контент-->

@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block top_menu %}
+    <div id="top-bar">
+      <div class="container clearfix">
+        <div class="col_half nobottommargin">
+          <!-- Top Links
+          ============================================= -->
+          <div class="top-links">
+            <ul>
+              <li><a href="/">Частным клиентам</a></li>
+              <li><a href="/">Для Бизнеса</a></li>
+              <li><a href="/about">О компании</a></li>
+              <li><a style="background-color: #EEE;"  href="/contact">Контакты</a></li>
+            </ul>
+          </div><!-- .top-links end -->
+
+        </div>
+
+        <div class="col_half fright col_last nobottommargin">
+          <!-- Top Social
+          ============================================= -->
+          <div id="top-social">
+            <ul>
+              <li><a href="tel:+78124485323" class="si-call"><span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+7 (812) 4485323</span></a></li>
+              <li><a href="mailto:info@zextel.ru" class="si-email3"><span class="ts-icon"><i class="icon-email3"></i></span><span class="ts-text">info@zextel.ru</span></a></li>
+            </ul>
+          </div><!-- #top-social end -->
+        </div>
+      </div>
+    </div>
+{% endblock %}<!-- #конец top_menu-->
+
+
+<!-- Header
+    ============================================= -->
+{% block header_menu %}
+    <header id="header" class="full-header">
+      <div id="header-wrap">
+        <div class="container clearfix">
+          <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+          <!-- Logo
+          ============================================= -->
+          <div id="logo">
+            <a href="/" class="standard-logo" data-dark-logo="https://slimexpert.github.io/zextel/static/images/logo-dark.png"><img src="https://slimexpert.github.io/zextel/static/images/logo-dark.png" alt="Canvas Logo"></a>
+            <a href="/" class="retina-logo" data-dark-logo="https://slimexpert.github.io/zextel/static/images/logo-dark@2x.png"><img src="https://slimexpert.github.io/zextel/static/images/logo-dark@2x.png" alt="Canvas Logo"></a>
+          </div><!-- #logo end -->
+
+          <!-- Primary Navigation
+          ============================================= -->
+          <nav id="primary-menu" class="style-4">
+            <ul>
+              <li class="current"><a href="/"><div>Интернет</div></a></li>
+              <li><a href="#"><div>Цифровое ТВ</div></a></li>
+              <li><a href="#"><div>Подключиться</div></a></li>
+              <li><a href="#"><div>Предожения</div></a></li>
+              <li><a href="#"><div>Оплата</div></a></li>
+              <li><a href="#"><div>Личный кабинет</div></a></li>
+            </ul>
+           </nav><!-- #primary-menu end -->
+
+        </div>
+      </div>
+    </header>
+{% endblock %}<!-- #конец header_menu-->
+
+<!-- Блок название страницы
+    ============================================= -->
+
+{% block page_title %}
+  <section id="page-title">
+  	<div class="container clearfix">
+  		<h1>Контакты</h1>
+   		<ol class="breadcrumb">
+  			<li class="breadcrumb-item"><a href="/">Главная</a></li>
+  			<li class="breadcrumb-item active" aria-current="page">Контакты</li>
+  		</ol>
+  	</div>
+  </section>
+{% endblock %}<!-- #конец блока название страниц-->
+
+<!-- Блок контент
+	============================================= --> 
+{% block content %} 
+  <div class="container clearfix">
+    <div class="col_half">
+      <div class="fancy-title title-dotted-border">
+        <h3>Написать нам</h3>
+      </div>
+
+      
+    </div>
+    <div class="col_half col_last">
+      <div class="fancy-title title-dotted-border">
+        <h3>Всегда рады видеть Вас</h3>
+      </div>
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A8d7c45fa63aa3e58f7f246b674d0103a8b7695eaabb4a923c3b9e013cb3912de&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+        <br />
+        <div class="tagcloud fright">
+            <a href="#" data-toggle="modal" data-target="#myModal">Распечатать карту для проезда</a>
+
+        </div>
+    </div>
+  </div>
+{% endblock %}<!-- Конец блока контент-->
+
+{% block zona_oh %}  <!-- Зона охвата сети -->
+  
+{% endblock %}
