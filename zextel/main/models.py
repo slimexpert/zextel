@@ -18,13 +18,17 @@ class slider(models.Model):
 # Модель для обращений
 class contact_support(models.Model):
 	supp_name = models.CharField("Имя отправителя", max_length=50)
-	supp_email = models.EmailField("E-mail", max_length=100)
-	
+	supp_email = models.EmailField("E-mail отправителя", max_length=100)
+	supp_tel = models.CharField("Телефон отправителя", max_length=14)
+	supp_cat = models.CharField("Имя отправителя", max_length=50)
+	supp_text = models.TextField('Текст обращения')
+	supp_otvet  = models.BooleanField('Ответ на обращение по телефону', default=1)
+	supp_date = models.DateTimeField('Дата обращения')
 
 	class Meta:
 		verbose_name = "Обращение"
 		verbose_name_plural = "Обращения"
 
 	def __str__(self):
-		return self.sl_title
+		return self.supp_name
     
