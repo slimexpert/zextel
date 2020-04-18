@@ -15,6 +15,7 @@ class slider(models.Model):
 	def __str__(self):
 		return self.sl_title
 
+
 # Модель для обращений
 class contact_support(models.Model):
 	supp_name = models.CharField("Имя отправителя", max_length=50)
@@ -24,7 +25,6 @@ class contact_support(models.Model):
 	supp_text = models.TextField('Текст обращения')
 	supp_otvet  = models.BooleanField('Ответ на обращение по телефону', default=1)
 	supp_date = models.DateTimeField('Дата обращения')
-
 
 	class Meta:
 		verbose_name = "Обращение"

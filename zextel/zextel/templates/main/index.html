@@ -52,7 +52,7 @@
           <nav id="primary-menu" class="style-4">
             <ul>
               <li class="current"><a href="/"><div>Интернет</div></a></li>
-              <li><a href="#"><div>Цифровое ТВ</div></a></li>
+              <li><a href="#"><div>Цифровое ТВ+</div></a></li>
               <li><a href="#"><div>Подключиться</div></a></li>
               <li><a href="#"><div>Предожения</div></a></li>
               <li><a href="#"><div>Оплата</div></a></li>
@@ -83,8 +83,8 @@
 {% endblock %}
 
 <!-- Блок ввода адреса
-    ============================================= -->        
-{% block dadata %}        
+    ============================================= -->
+{% block dadata %}
         <div class="promo promo-light promo-full bottommargin-sm header-stick notopborder">
           <div class="container clearfix">
             <form id="widget-subscribe-form2" action="include/subscribe.php" method="post" class="nobottommargin">
@@ -103,8 +103,8 @@
 {% endblock %}<!-- #конец блока слайдера-->
 
 <!-- Блок тарифы
-    ============================================= --> 
-{% block main_tariff %} 
+    ============================================= -->
+{% block main_tariff %}
       <div class="fancy-title title-dotted-border title-center"><h3>Наши тарифы</h3></div>
         <div class="container clearfix">
           <div class="tabs tabs-bb clearfix" id="tab-9">
@@ -202,7 +202,7 @@
                         </div>
                       </div>
                     </div>
-                  
+
                 <div class="fancy-title title-bottom-border title-center">
                   <h3><span>Тарифы для многоквартирных домов</span></h3>
                 </div>
@@ -318,9 +318,9 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="tab-content clearfix" id="tabs-10">
-                  
+
             </div>
             <div class="tab-content clearfix" id="tabs-11">
               <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
@@ -333,8 +333,8 @@
 {% endblock %}<!-- Конец блока тарифы -->
 
 <!-- Блок новости
-============================================= --> 
-{% block news_5 %} 
+============================================= -->
+{% block news_5 %}
         <div class="fancy-title title-dotted-border title-center">
             <h3>Новости</h3>
         </div>
@@ -346,7 +346,7 @@
                   <div class="card-header"><h5 class="mb-0"><i class="icon-calendar3"></i>  {{ a.pub_date }}</h5></div>
                   <div class="card-body">
                       <h5>{{ a.new_title }}</h5>
-                      <div>{{ a.new_title_text|safe }}</div> 
+                      <div>{{ a.new_title_text|safe }}</div>
                   </div>
                     <a href="{% url 'about:detail' a.id %}" class="btn btn-light"><span>Подробнее</span></a>
                 </div>
