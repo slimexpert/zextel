@@ -42,10 +42,11 @@
 
 <style type="text/css">
 #map {
-  -ms-filter: grayscale(1);
-  -webkit-filter: grayscale(1);
-  -moz-filter: grayscale(1);
-  -o-filter: grayscale(1);
+  filter: brightness(50%);
+  -ms-filter: brightness(50%);
+  -webkit-filter: brightness(60%);
+  -moz-filter: brightness(50%);   
+  -o-filter: brightness(50%); 
 }
 </style>
 
@@ -55,7 +56,7 @@
 
     <!-- Блок Верхнее меню
     ============================================= -->
-    {% block top_menu %}
+{% block top_menu %}
     <div id="top-bar">
       <div class="container clearfix">
         <div class="col_half nobottommargin">
@@ -84,7 +85,7 @@
         </div>
       </div>
     </div>  
-    {% endblock %}<!-- #конец top_menu-->
+{% endblock %}<!-- #конец top_menu-->
 
 <!-- Header
     ============================================= -->
@@ -151,13 +152,13 @@
       {% block news_5 %} 
       {% endblock %}<!-- Конец блока новости-->
 
-
-        <!-- Зона охвата сети -->
+      {% block zona_oh %}  <!-- Зона охвата сети -->
         <div class="fancy-title title-dotted-border title-center">
             <h3>Зона охвата сети ZEXTEL</h3>
         </div>
         <div id="map" style="height: 350px;margin-bottom: 20px;position: relative;overflow: hidden;" ></div>
         <!-- Конец Зона охвата сети -->
+      {% endblock %}
 
         <a href="#" class="button button-full center tright footer-stick">
           <div class="container clearfix">

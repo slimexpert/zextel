@@ -10,12 +10,12 @@ class new(models.Model):
 	pub_main = models.BooleanField('Показывать на главной', default=1)
 	new_like = models.IntegerField('Лайк', default=1)
 
-def __str__(self):
-    return self.sl_title
-## Руссификация админки
-    class Meta:
-    	verbose_name = 'Новость'
-    	verbose_name_plural = 'Новости'
+	def __str__(self):
+		return self.sl_title
+	## Руссификация админки
+	class Meta:
+		verbose_name = 'Новость'
+		verbose_name_plural = 'Новости'
 
 class job(models.Model):
 	job_title = models.CharField('Наименование вакансии', max_length=100)
@@ -23,12 +23,12 @@ class job(models.Model):
 	job_date = models.DateTimeField('Дата публикации вакансии')
 	job_show = models.BooleanField('Отображать вакансию на сайте', default=1)
 
-def __str__(self):
-    return self.new_title
-## Руссификация админки
-    class Meta:
-    	verbose_name = 'Вакансия'
-    	verbose_name_plural = 'Вакансии'
+	def __str__(self):
+		return self.new_title
+	## Руссификация админки
+	class Meta:
+		verbose_name = 'Вакансия'
+		verbose_name_plural = 'Вакансии'
 
 class document(models.Model):
 	doc_title = models.CharField('Заголовок документа', max_length=200)
@@ -36,9 +36,9 @@ class document(models.Model):
 	doc_pub = models.DateTimeField('Дата публикации документа')
 	doc_show = models.BooleanField('Отображать документ на сайте', default=1)
 
-def __str__(self):
-    return self.new_title
-## Руссификация админки
-    class Meta:
-    	verbose_name = 'Документ'
-    	verbose_name_plural = 'Документы'
+	def __str__(self):
+		return self.new_title
+	## Руссификация админки
+	class Meta:
+		verbose_name = 'Документ'
+		verbose_name_plural = 'Документы'

@@ -18,3 +18,7 @@ def detail(request, new_id):
 def docs(request):
 	doc_list = document.objects.filter(doc_show='1')
 	return render(request, 'about/docs.html', {'doc_list': doc_list})
+
+def jobs(request):
+	jobs_list = document.objects.filter(doc_show='1')
+	return render(request, 'about/jobs.html', {'jobs_list': jobs_list})
