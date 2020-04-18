@@ -25,10 +25,10 @@ class contact_support(models.Model):
 	supp_otvet  = models.BooleanField('Ответ на обращение по телефону', default=1)
 	supp_date = models.DateTimeField('Дата обращения')
 
+
 	class Meta:
 		verbose_name = "Обращение"
 		verbose_name_plural = "Обращения"
 
 	def __str__(self):
 		return self.supp_name
-    

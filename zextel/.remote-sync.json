@@ -1,0 +1,13 @@
+{
+“transport”: “sftp”,
+“uploadOnSave”: true,
+“deleteLocal”: false,
+“hostname”: “92.53.96.46”,
+“port”: “22”,
+“target”: “/home/s/slimexpert/zextel/public_html/”,
+“ignore”: [
+“.remote-sync.json”,
+],
+“username”: “slimexpert”,
+“password”: “HTVnfc9R”,
+}
