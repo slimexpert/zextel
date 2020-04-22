@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.shortcuts import reverse
 
 # Модель для слайдера
 class slider(models.Model):
@@ -16,19 +17,23 @@ class slider(models.Model):
 		return self.sl_title
 
 
+
 # Модель для обращений
 class contact_support(models.Model):
 	supp_name = models.CharField("Имя отправителя", max_length=50)
 	supp_email = models.EmailField("E-mail отправителя", max_length=100)
 	supp_tel = models.CharField("Телефон отправителя", max_length=14)
-	supp_cat = models.CharField("Имя отправителя", max_length=50)
+	supp_cat = models.CharField("Категория обращения", max_length=50)
 	supp_text = models.TextField('Текст обращения')
-	supp_otvet  = models.BooleanField('Ответ на обращение по телефону', default=1)
-	supp_date = models.DateTimeField('Дата обращения')
+	supp_otvet  = models.CharField('Ответ на обращение', max_length=50)
+	supp_date = models.DateTimeField('Дата обращения', auto_now_add=True)
+
+	def get_absolute_url(self):
+		return reverse('main:support_url', kwargs={'supp_name':self.supp_name})
 
 	class Meta:
 		verbose_name = "Обращение"
 		verbose_name_plural = "Обращения"
 
 	def __str__(self):
-		return self.supp_name
+		return '{}'.format(self.supp_name)
