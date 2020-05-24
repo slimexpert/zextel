@@ -53,10 +53,10 @@
             <ul>
               <li class="current"><a href="/"><div>Интернет</div></a></li>
               <li><a href="#"><div>Цифровое ТВ+</div></a></li>
-              <li><a href="#"><div>Подключиться</div></a></li>
-              <li><a href="#"><div>Предожения</div></a></li>
-              <li><a href="#"><div>Оплата</div></a></li>
-              <li><a href="#"><div>Личный кабинет</div></a></li>
+              <li><a href="/connect"><div>Подключиться</div></a></li>
+              <li><a href="/stock"><div>Предожения</div></a></li>
+              <li><a href="/payment"><div>Оплата</div></a></li>
+              <li><a href="http://stat.zextel.ru/" target="_blank"><div>Личный кабинет</div></a></li>
             </ul>
            </nav><!-- #primary-menu end -->
 
@@ -66,7 +66,7 @@
 {% endblock %}<!-- #конец header_menu-->
 
 {% block slider %}
-    <section id="slider" class="slider-element slider-parallax swiper_wrapper clearfix" data-autoplay="6000">
+    <section id="slider" class="slider-element slider-parallax swiper_wrapper clearfix" data-autoplay="10000">
       <div class="slider-parallax-inner">
         <div class="swiper-container swiper-parent">
           <div class="swiper-wrapper">
@@ -87,12 +87,13 @@
 {% block dadata %}
         <div class="promo promo-light promo-full bottommargin-sm header-stick notopborder">
           <div class="container clearfix">
-            <form id="widget-subscribe-form2" action="include/subscribe.php" method="post" class="nobottommargin">
+            <form id="widget-subscribe-form2" action="connect/" method="post" class="nobottommargin">
+              {% csrf_token %}
               <div class="input-group divcenter">
                 <div class="input-group-prepend">
                     <div class="input-group-text"><i class="icon-line2-home"></i></div>
-                  </div>
-                <input id="address" type="text" name="widget-subscribe-form-email" class="form-control required email" placeholder="Введите начальные буквы своей улицы">
+                </div>
+                <input id="address" type="text" name="address" class="form-control required email" placeholder="Введите начальные буквы своей улицы">
                 <div class="input-group-append">
                   <button class="btn btn-outline-dark" type="submit">Подключиться</button>
                 </div>
@@ -105,231 +106,107 @@
 <!-- Блок тарифы
     ============================================= -->
 {% block main_tariff %}
-      <div class="fancy-title title-dotted-border title-center"><h3>Наши тарифы</h3></div>
+      <div id="tarif" class="fancy-title title-dotted-border title-center"><h3>Наши тарифы</h3></div>
         <div class="container clearfix">
-          <div class="tabs tabs-bb clearfix" id="tab-9">
+          <div class="tabs tabs-bb clearfix"  data-active="{{ zone_id }}">
             <ul class="tab-nav clearfix">
-              <li><a href="#tabs-1">г. ВСЕВОЛОЖСК</a></li>
-              <li><a href="#tabs-10">п. РОМАНОВКА</a></li>
-              <li><a href="#tabs-11">п. ЩЕГЛОВО</a></li>
-              <li><a href="#tabs-12">п. РАХЬЯ</a></li>
+              {% for zone in zone_list %}
+                  <li><a href="#tabs-{{ zone.zone_number }}">{{ zone.zone_text }}</a></li>
+              {% endfor %}
             </ul>
-            <div class="tab-content clearfix" id="tabs-1">
-              <div class="tab-container">
-                <div class="fancy-title title-bottom-border title-center">
-                  <h3><span>Тарифы для загородного дома</span></h3>
-                </div>
-                  <div id="section-pricing" class="page-section nopadding nomargin">
-                    <div id="pricing-switch" class="pricing row bottommargin-lg clearfix">
-                      <div class="col-lg-4 col-md-6">
-                        <div class="pricing-box">
-                          <div class="pricing-title">
-                            <div><h3>ZO-mini</h3></div>
-                          </div>
-                          <div class="pricing-price">
-                            <div><span class="price-unit">&#8381;</span>1150<span class="price-tenure">/мес.</span></div>
-                          </div>
-                          <div class="pricing-features">
-                              <ul>
-                                <li>ПОЛНЫЙ БЕЗЛИМИТ</li>
-                                <div><li><strong>50</strong> мбит/сек.</li></div>
-                                <li><strong>Скидка 10%</strong> при оплате за год</li>
-                                <li>Поддержка 24/7</li>
-                                <li><i class="icon-star3"></i>
-                                <i class="icon-star3"></i>
-                                <i class="icon-star-half-full"></i>
-                                <i class="icon-star-empty"></i>
-                                <i class="icon-star-empty"></i></li>
-                              </ul>
-                          </div>
-                          <div class="pricing-action">
-                            <div><a href="#" class="button button-rounded capitalize ls0" style="border-radius: 23px;">Подключиться</a></div>
-                          </div>
-                        </div>
-                      </div>
-                        <div class="col-lg-4 col-md-6">
-                          <div class="pricing-box best-price">
-                            <div class="pricing-title">
-                              <div><h3>ZO-standart</h3></div>
-                              <span>Популярный</span>
-                            </div>
-                            <div class="pricing-price">
-                              <div ><span class="price-unit">&#8381;</span>1350<span class="price-tenure">/мес.</span></div>
-                            </div>
-                            <div class="pricing-features">
-                              <ul>
-                                <li>ПОЛНЫЙ БЕЗЛИМИТ</li>
-                                <div><li><strong>70</strong> мбит/сек.</li></div>
-                                <li><strong>Скидка 10%</strong> при оплате за год</li>
-                                <li>Поддержка 24/7</li>
-                                <li><i class="icon-star3"></i>
-                                <i class="icon-star3"></i>
-                                <i class="icon-star3"></i>
-                                <i class="icon-star-half-full"></i>
-                                <i class="icon-star-empty"></i></li>
-                              </ul>
-                            </div>
-                            <div class="pricing-action">
-                              <div><a href="#" class="button button-large button-rounded capitalize ls0" style="border-radius: 23px;">Подключиться</a></div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-4 offset-lg-0 col-md-6 offset-md-3">
-                          <div class="pricing-box">
-                            <div class="pricing-title">
-                              <div><h3>ZO-maxi</h3></div>
-                            </div>
-                            <div class="pricing-price">
-                              <div><span class="price-unit">&#8381;</span>1550<span class="price-tenure">/мес.</span></div>
-                            </div>
-                            <div class="pricing-features">
-                              <ul>
-                                <li>ПОЛНЫЙ БЕЗЛИМИТ</li>
-                                <div><li><strong>100</strong> мбит/сек.</li></div>
-                                <li><strong>Скидка 10%</strong> при оплате за год</li>
-                                <li>Поддержка 24/7</li>
-                                <li><i class="icon-star3"></i>
-                                <i class="icon-star3"></i>
-                                <i class="icon-star3"></i>
-                                <i class="icon-star3"></i>
-                                <i class="icon-star3"></i></li>
-                              </ul>
-                            </div>
-                            <div class="pricing-action">
-                              <div><a href="#" class="button button-rounded capitalize ls0" style="border-radius: 23px;">Подключиться</a></div>
-                            </div>
-                          </div>
-                        </div>
+            {% for zone in zone_list %}
+              <div class="tab-content clearfix" id="tabs-{{ zone.zone_number }}">
+                  <div class="tab-container">
+                    <div class="fancy-title title-bottom-border title-center">
+                      <h3><span>Тарифы для загородного дома</span></h3>
+                    </div>
+                    <div id="section-pricing" class="page-section nopadding nomargin">
+                      <div id="pricing-switch" class="pricing row bottommargin-lg clearfix">
+                        {% for tarif in rate_list %}
+                          {% if tarif.rate_zone_id == zone.id %}
+                              {% if tarif.rate_type == 'ЧД' %}
+                                  {% if tarif.rate_group == zone.zone_number %}
+                                    <div class="col-lg-4 col-md-6 ">
+                                      <div class="pricing-box {% if tarif.rate_popular %} best-price {% endif %}">
+                                        <div class="pricing-title">
+                                          <div><h3>{{ tarif.rate_title }}</h3></div>
+                                          {% if tarif.rate_popular %} <span>Популярный</span> {% endif %}
+                                        </div>
+                                        <div class="pricing-price">
+                                          <div><span class="price-unit">&#8381;</span>{{ tarif.rate_summ|floatformat }}<span class="price-tenure">/мес.</span></div>
+                                        </div>
+                                        <div class="pricing-features">
+                                            <ul>
+                                              <li>ПОЛНЫЙ БЕЗЛИМИТ</li>
+                                              <li><strong>{{ tarif.rate_speed }}</strong> мбит/сек.</li>
+                                              <li><strong>{{ tarif.rate_tv_count }}</strong> каналов ТВ.</li>
+                                              <li><strong>Скидка 10%</strong> при оплате за год</li>
+                                              <li>Поддержка 24/7</li>
+                                              <li><i class="icon-star3"></i>
+                                              <i class="icon-star3"></i>
+                                              <i class="icon-star-half-full"></i>
+                                              <i class="icon-star-empty"></i>
+                                              <i class="icon-star-empty"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="pricing-action">
+                                          <div><a href="connect/?rate={{ tarif.id }}" class="button button-rounded capitalize ls0" style="border-radius: 23px;">Подключиться</a></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  {% endif %}
+                              {% endif %}
+                          {% endif %}
+                        {% endfor %}
                       </div>
                     </div>
+                    <div class="fancy-title title-bottom-border title-center">
+                      <h3><span>Тарифы для Многоквартирных домов</span></h3>
+                    </div>
+                    {% for tarif in rate_list %}
+                      {% if tarif.rate_zone_id == zone.id %}
+                          {% if tarif.rate_type == 'МКД' %}
+                              {% if tarif.rate_group == zone.zone_number %}
+                              <div class="pricing-box pricing-extended bottommargin clearfix">
+                                  <div class="pricing-desc">
+                                    <div class="pricing-title">
+                                      <div><h3>{{ tarif.rate_title }}</h3></div>
+                                      {% if tarif.rate_popular %} <span>Популярный</span> {% endif %}
+                                    </div>
+                                    <div class="pricing-features">
+                                      <ul class="clearfix">
+                                        <li>ПОЛНЫЙ БЕЗЛИМИТ</li>
+                                        <li><strong>{{ tarif.rate_speed }}</strong> мбит/сек.</li>
+                                        <li><strong>{{ tarif.rate_tv_count }}</strong> каналов ТВ.</li>
+                                        <li><strong>Скидка 10%</strong> при оплате за год</li>
+                                        <li>Поддержка 24/7</li>
+                                        <li><i class="icon-star3"></i>
+                                        <i class="icon-star3"></i>
+                                        <i class="icon-star-half-full"></i>
+                                        <i class="icon-star-empty"></i>
+                                        <i class="icon-star-empty"></i></li>
+                                      </ul>
+                                    </div>
+                                  </div>
 
-                <div class="fancy-title title-bottom-border title-center">
-                  <h3><span>Тарифы для многоквартирных домов</span></h3>
-                </div>
-                <div class="row pricing bottommargin clearfix">
-                  <div class="col-lg-3">
-                    <div class="pricing-box">
-                      <div class="pricing-title">
-                        <h3>Z-450</h3>
-                      </div>
-                      <div class="pricing-price">
-                        <div><span class="price-unit">&#8381;</span>500<span class="price-tenure">/мес.</span></div>
-                      </div>
-                      <div class="pricing-features">
-                        <ul>
-                          <li>ПОЛНЫЙ БЕЗЛИМИТ</li>
-                            <div><li><strong>10</strong> мбит/сек.</li></div>
-                            <li><strong>Скидка 10%</strong> при оплате за год</li>
-                            <li>Поддержка 24/7</li>
-                            <li><i class="icon-star-half-full"></i>
-                            <i class="icon-star-empty"></i>
-                            <i class="icon-star-empty"></i>
-                            <i class="icon-star-empty"></i>
-                            <i class="icon-star-empty"></i></li>
-                        </ul>
-                      </div>
-                      <div class="pricing-action">
-                        <a href="#" class="button button-rounded capitalize ls0" style="border-radius: 23px;">Подключиться</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-3">
-                    <div class="pricing-box">
-                      <div class="pricing-title">
-                        <h3>Z-500</h3>
-                      </div>
-                      <div class="pricing-price">
-                        <span class="price-unit">&#8381;</span>550<span class="price-tenure">/мес.</span>
-                      </div>
-                      <div class="pricing-features">
-                        <ul>
-                          <li>ПОЛНЫЙ БЕЗЛИМИТ</li>
-                            <div><li><strong>30</strong> мбит/сек.</li></div>
-                            <li><strong>Скидка 10%</strong> при оплате за год</li>
-                            <li>Поддержка 24/7</li>
-                            <li><i class="icon-star3"></i>
-                            <i class="icon-star3"></i>
-                            <i class="icon-star-half-full"></i>
-                            <i class="icon-star-empty"></i>
-                            <i class="icon-star-empty"></i></li>
-                        </ul>
-                      </div>
-                      <div class="pricing-action">
-                        <a href="#" class="button button-rounded capitalize ls0" style="border-radius: 23px;">Подключиться</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-3">
-                    <div class="pricing-box best-price">
-                      <div class="pricing-title">
-                        <h3>Z-600</h3>
-                        <span>Популярный</span>
-                      </div>
-                      <div class="pricing-price">
-                        <span class="price-unit">&#8381;</span>660<span class="price-tenure">/мес.</span>
-                      </div>
-                      <div class="pricing-features">
-                        <ul>
-                          <li>ПОЛНЫЙ БЕЗЛИМИТ</li>
-                          <div><li><strong>50</strong> мбит/сек.</li></div>
-                          <li><strong>Скидка 10%</strong> при оплате за год</li>
-                          <li>Поддержка 24/7</li>
-                          <li><i class="icon-star3"></i>
-                          <i class="icon-star3"></i>
-                          <i class="icon-star3"></i>
-                          <i class="icon-star-half-full"></i>
-                          <i class="icon-star-empty"></i></li>
-                        </ul>
-                      </div>
-                      <div class="pricing-action">
-                        <a href="#" class="button button-large button-rounded capitalize ls0" style="border-radius: 23px;">Подключиться</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-3">
-                    <div class="pricing-box">
-                      <div class="pricing-title">
-                        <h3>Z-800</h3>
-                      </div>
-                    <div class="pricing-price">
-                      <span class="price-unit">&#8381;</span>900<span class="price-tenure">/мес.</span>
-                    </div>
-                    <div class="pricing-features">
-                      <ul>
-                        <li>ПОЛНЫЙ БЕЗЛИМИТ</li>
-                          <div><li><strong>100</strong> мбит/сек.</li></div>
-                          <li><strong>Скидка 10%</strong> при оплате за год</li>
-                          <li>Поддержка 24/7</li>
-                          <li><i class="icon-star3"></i>
-                          <i class="icon-star3"></i>
-                          <i class="icon-star3"></i>
-                          <i class="icon-star3"></i>
-                          <i class="icon-star3"></i></li>
-                        </ul>
-                    </div>
-                    <div class="pricing-action">
-                      <a href="#" class="button button-rounded capitalize ls0" style="border-radius: 23px;">Подключиться</a>
-                    </div>
-                    </div>
-                  </div>
+                                  <div class="pricing-action-area">
+                                    <div class="pricing-price">
+                                      <div><span class="price-unit">&#8381;</span>{{ tarif.rate_summ|floatformat }}<span class="price-tenure">/мес.</span></div>
+                                    </div>
+                                    <div class="pricing-action">
+                                      <div><a href="connect/?rate={{ tarif.id }}" class="button button-rounded capitalize ls0" style="border-radius: 23px;">Подключиться</a></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              {% endif %}
+                          {% endif %}
+                      {% endif %}
+                    {% endfor %}
                 </div>
               </div>
-            </div>
-
-            <div class="tab-content clearfix" id="tabs-10">
-
-            </div>
-            <div class="tab-content clearfix" id="tabs-11">
-              <p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
-            </div>
-            <div class="tab-content clearfix" id="tabs-12">
-              <p>Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
-            </div>
-          </div>
+            {% endfor %}
         </div>
+      </div>
 {% endblock %}<!-- Конец блока тарифы -->
 
 <!-- Блок новости

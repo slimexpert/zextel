@@ -11,7 +11,7 @@ class new(models.Model):
 	new_like = models.IntegerField('Лайк', default=1)
 
 	def __str__(self):
-		return self.sl_title
+		return self.new_title
 	## Руссификация админки
 	class Meta:
 		verbose_name = 'Новость'

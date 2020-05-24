@@ -8,7 +8,6 @@
   <!-- Stylesheets zextel/static/css/bootstrap.css
   ============================================= -->
   <!--<link href="https://fonts.googleapis.com/css?family=Play:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />-->
-
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://slimexpert.github.io/zextel/static/css/bootstrap.css" type="text/css" />
@@ -18,16 +17,19 @@
   <link rel="stylesheet" href="https://slimexpert.github.io/zextel/static/css/font-icons.css" type="text/css" />
   <link rel="stylesheet" href="https://slimexpert.github.io/zextel/static/css/animate.css" type="text/css" />
   <link rel="stylesheet" href="https://slimexpert.github.io/zextel/static/css/magnific-popup.css" type="text/css" />
-  
+
   <link rel="stylesheet" href="https://slimexpert.github.io/zextel/static/css/responsive.css" type="text/css" />
   <link rel="stylesheet" href="https://slimexpert.github.io/zextel/static/css/colors.css" type="text/css" />
   <link rel="stylesheet" href="https://slimexpert.github.io/zextel/static/css/components/bs-switches.css" type="text/css" />
-  
+
   <link href="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.1.1/dist/css/suggestions.min.css" rel="stylesheet" />
 
   <script src="https://yastatic.net/jquery/2.2.3/jquery.min.js"></script>
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=382328aa-6e1b-40ca-936e-1d474fd951bc" type="text/javascript"></script>
   <script src="https://slimexpert.github.io/zextel/static/js/zextel_map.js" type="text/javascript"></script>
+
+  <!-- jQuery Mask Plugin -->
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!-- Document Title
@@ -45,8 +47,8 @@
   filter: brightness(50%);
   -ms-filter: brightness(50%);
   -webkit-filter: brightness(60%);
-  -moz-filter: brightness(50%);   
-  -o-filter: brightness(50%); 
+  -moz-filter: brightness(50%);
+  -o-filter: brightness(50%);
 }
 </style>
 
@@ -84,7 +86,7 @@
           </div><!-- #top-social end -->
         </div>
       </div>
-    </div>  
+    </div>
 {% endblock %}<!-- #конец top_menu-->
 
 <!-- Header
@@ -131,25 +133,25 @@
     ============================================= -->
     <section id="content">
       <div class="content-wrap">
-      
+
       <!-- Блок ввода адреса
-      ============================================= -->        
-      {% block dadata %}        
+      ============================================= -->
+      {% block dadata %}
       {% endblock %}<!-- #конец блока слайдера-->
-      
+
       <!-- Блок ввода адреса
-      ============================================= --> 
-      {% block main_tariff %} 
+      ============================================= -->
+      {% block main_tariff %}
       {% endblock %}<!-- Конец блока тарифы -->
 
       <!-- Блок контент
-      ============================================= --> 
-      {% block content %} 
+      ============================================= -->
+      {% block content %}
       {% endblock %}<!-- Конец блока контент-->
 
       <!-- Блок новости
-      ============================================= --> 
-      {% block news_5 %} 
+      ============================================= -->
+      {% block news_5 %}
       {% endblock %}<!-- Конец блока новости-->
 
       {% block zona_oh %}  <!-- Зона охвата сети -->
@@ -160,13 +162,14 @@
         <!-- Конец Зона охвата сети -->
       {% endblock %}
 
-        <a href="#" class="button button-full center tright footer-stick">
+      {% block bth_connect %}  <!-- Кнопка подключиться -->
+        <a href="connect/" class="button button-full center tright footer-stick">
           <div class="container clearfix">
               <strong>ОСТАВИТЬ ЗАЯВКУ НА ПОДКЛЮЧЕНИЕ</strong> <i class="icon-caret-right" style="top:4px;"></i>
           </div>
         </a>
+      {% endblock %}
       </div>
-
     </section><!-- #content end -->
 
     <!-- Footer
@@ -406,14 +409,14 @@
   <div id="gotoTop" class="icon-angle-up"></div>
 
   <!-- External JavaScripts
-  ============================================= -->
+  =============================================-->
   <script src="https://slimexpert.github.io/zextel/static/js/jquery.js"></script>
   <script src="https://slimexpert.github.io/zextel/static/js/plugins.js"></script>
 
-  <!-- Footer Scripts
-  ============================================= -->
+  <!--Footer Scripts
+  =============================================-->
   <script src="https://slimexpert.github.io/zextel/static/js/functions.js"></script>
-    
+
 <!-- Скрипт Dadata.ru-->
   <script src="https://cdn.jsdelivr.net/npm/suggestions-jquery@20.1.1/dist/js/jquery.suggestions.min.js"></script>
     <script>
@@ -425,6 +428,12 @@
           console.log(suggestion);
         }
       });
+   </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+   <script>
+    $(function() {
+      $('.jmp').mask('+7(000)000-00-00');
+    });
    </script>
 
 </body>

@@ -30,6 +30,20 @@ ALLOWED_HOSTS = [
     'new.zextel.ru'
 ]
 
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'zextel.sup@gmail.com'
+EMAIL_HOST_PASSWORD = 'Masterro6228'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+SERVER_EMAIL = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+DADATA_KEY = "db4016c650f3e48961a5039edf12415e244a9136"
+DADATA_SECRET = "12c55363707c3aae468de4b730edfe761ab05544"
 
 # Application definition
 

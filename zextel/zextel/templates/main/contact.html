@@ -51,11 +51,11 @@
           <nav id="primary-menu" class="style-4">
             <ul>
               <li class="current"><a href="/"><div>Интернет</div></a></li>
-              <li><a href="#"><div>Цифровое ТВ</div></a></li>
-              <li><a href="#"><div>Подключиться</div></a></li>
-              <li><a href="#"><div>Предожения</div></a></li>
-              <li><a href="#"><div>Оплата</div></a></li>
-              <li><a href="#"><div>Личный кабинет</div></a></li>
+              <li><a href="#"><div>Цифровое ТВ+</div></a></li>
+              <li><a href="/connect"><div>Подключиться</div></a></li>
+              <li><a href="/stock"><div>Предожения</div></a></li>
+              <li><a href="/payment"><div>Оплата</div></a></li>
+              <li><a href="http://stat.zextel.ru/" target="_blank"><div>Личный кабинет</div></a></li>
             </ul>
            </nav><!-- #primary-menu end -->
 
@@ -83,13 +83,14 @@
 	============================================= -->
 {% block content %}
 
-{% if sub %}
-  <div>
-      <h3>{{ sub }}</h3>
-  </div>
-{% endif %}
-
   <div class="container clearfix">
+    <div class="promo promo-border promo-full bottommargin">
+					<div class="container clearfix">
+						<h3>Уважаемые абоненты</h3>
+						<span>В связи со сложившийся ситуацией, до 12 мая наш офис закрыт на прием платежей <br /> и заключения договоров.</span>
+						<a href="#" class="button button-xlarge button-rounded">Оплатить</a>
+					</div>
+				</div>
     <div class="col_half">
       <div class="fancy-title title-dotted-border">
         <h3>Написать нам</h3>
@@ -121,12 +122,7 @@
               </div>
               <div class="col-12 form-group">
                 <label>Текст вашего обращения:</label>
-                {{ form.text }}
-                {% if form.errors %}
-                    <div class='alert alert-danger'>
-                        {{ form.text.errors }}
-                    </div>
-                {% endif %}
+                    {{ form.text }}
               </div>
               <div class="col-12 form-group">
                 <label>Как лучше с Вами связаться:</label>
@@ -149,14 +145,35 @@
     </div>
     <div class="col_half col_last">
       <div class="fancy-title title-dotted-border">
-        <h3>Всегда рады видеть Вас</h3>
+        <h3>Мы всегда рады видеть Вас, у нас в офисе</h3>
       </div>
-        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A8d7c45fa63aa3e58f7f246b674d0103a8b7695eaabb4a923c3b9e013cb3912de&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
-        <br />
-        <div class="tagcloud fright">
-            <a href="#" data-toggle="modal" data-target="#myModal">Распечатать карту для проезда</a>
+      <p>По адресу: Всеволожский р-н, п. Романовка, д. 20 (центральный вход)</p>
+      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A8d7c45fa63aa3e58f7f246b674d0103a8b7695eaabb4a923c3b9e013cb3912de&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
 
+<!--        <br />
+        <div class="tagcloud fright">
+            <a href="#" data-toggle="modal" data-target="#myModal" data-toggle="modal">Распечатать карту для проезда</a>
         </div>
+        <!-- Modal
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-body">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h4 class="modal-title" id="myModalLabel">Карта проезда</h4>
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+										</div>
+										<div class="modal-body">
+											<p></p>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+											<button type="button" class="btn btn-primary" onClick="window.print()">Распечатать</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div> -->
     </div>
   </div>
 {% endblock %}<!-- Конец блока контент-->

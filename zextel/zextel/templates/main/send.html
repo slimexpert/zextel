@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block top_menu %}
+    <div id="top-bar">
+      <div class="container clearfix">
+        <div class="col_half nobottommargin">
+          <!-- Top Links
+          ============================================= -->
+          <div class="top-links">
+            <ul>
+              <li><a style="background-color: #EEE;" href="/">Частным клиентам</a></li>
+              <li><a href="/">Для Бизнеса</a></li>
+              <li><a href="/about">О компании</a></li>
+              <li><a href="/contact">Контакты</a></li>
+            </ul>
+          </div><!-- .top-links end -->
+
+        </div>
+
+        <div class="col_half fright col_last nobottommargin">
+          <!-- Top Social
+          ============================================= -->
+          <div id="top-social">
+            <ul>
+              <li><a href="tel:+78124485323" class="si-call"><span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+7 (812) 4485323</span></a></li>
+              <li><a href="mailto:info@zextel.ru" class="si-email3"><span class="ts-icon"><i class="icon-email3"></i></span><span class="ts-text">info@zextel.ru</span></a></li>
+            </ul>
+          </div><!-- #top-social end -->
+        </div>
+      </div>
+    </div>
+{% endblock %}<!-- #конец top_menu-->
+
+
+<!-- Header
+    ============================================= -->
+{% block header_menu %}
+<header id="header" class="full-header">
+  <div id="header-wrap">
+    <div class="container clearfix">
+      <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+      <!-- Logo
+      ============================================= -->
+      <div id="logo">
+        <a href="/" class="standard-logo" data-dark-logo="https://slimexpert.github.io/zextel/static/images/logo-dark.png"><img src="https://slimexpert.github.io/zextel/static/images/logo-dark.png" alt="Canvas Logo"></a>
+        <a href="/" class="retina-logo" data-dark-logo="https://slimexpert.github.io/zextel/static/images/logo-dark@2x.png"><img src="https://slimexpert.github.io/zextel/static/images/logo-dark@2x.png" alt="Canvas Logo"></a>
+      </div><!-- #logo end -->
+
+      <!-- Primary Navigation
+      ============================================= -->
+      <nav id="primary-menu" class="style-4">
+        <ul>
+          <li><a href="/"><div>Интернет</div></a></li>
+          <li><a href="#"><div>Цифровое ТВ</div></a></li>
+          <li class="current"><a href="#"><div>Подключиться</div></a></li>
+          <li><a href="/stock"><div>Предожения</div></a></li>
+          <li><a href="/payment"><div>Оплата</div></a></li>
+          <li><a href="http://stat.zextel.ru/" target="_blank"><div>Личный кабинет</div></a></li>
+        </ul>
+       </nav><!-- #primary-menu end -->
+
+    </div>
+  </div>
+</header>
+{% endblock %}<!-- #конец header_menu-->
+
+<!-- Блок название страницы
+    ============================================= -->
+
+{% block page_title %}
+  <section id="page-title">
+  	<div class="container clearfix">
+  		<h1>Подключение</h1>
+   		<ol class="breadcrumb">
+  			<li class="breadcrumb-item"><a href="/">Главная</a></li>
+  			<li class="breadcrumb-item active" aria-current="page">Подключиться</li>
+  		</ol>
+  	</div>
+  </section>
+{% endblock %}<!-- #конец блока название страниц-->
+
+<!-- Блок контент
+	============================================= -->
+{% block content %}
+  <div class="container clearfix">
+    <div class="promo promo-border promo-center bottommargin">
+          <h3>Ваша заявка {{ msg }} </h3>
+          <span>Спасибо за обращение в нашу компанию<br /> Наши специалисты свяжуться с вами в ближайшее время </span>
+          <a href="/" class="button button-border button-rounded button-fill fill-from-right button-amber"><span>На главную</span></a>
+          <a href="/stock" class="button button-border button-rounded button-fill fill-from-bottom button-amber"><span>Предожения</span></a>
+          <a href="/payment" class="button button-border button-rounded button-fill fill-from-top button-amber"><span>Оплата</span></a>
+    </div>
+</div>
+
+{% endblock %}<!-- Конец блока контент-->
+
+<!-- Блок новости
+============================================= -->
+{% block news_5 %}
+        <div class="fancy-title title-dotted-border title-center">
+            <h3>Новости</h3>
+        </div>
+        <div class="container clearfix">
+          <div id="oc-fbox" class="owl-carousel fbox-carousel carousel-widget" data-margin="20" data-rewind="True" data-pagi="True" data-loop="True" data-items-xs="1" data-items-md="2" data-items-xl="3">
+            {% for a in news_list %}
+              <div class="oc-item">
+                <div class="card events-meta">
+                  <div class="card-header"><h5 class="mb-0"><i class="icon-calendar3"></i>  {{ a.pub_date }}</h5></div>
+                  <div class="card-body">
+                      <h5>{{ a.new_title }}</h5>
+                      <div>{{ a.new_title_text|safe }}</div>
+                  </div>
+                    <a href="{% url 'about:detail' a.id %}" class="btn btn-light"><span>Подробнее</span></a>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+{% endblock %}<!-- Конец блока новости-->
+
+<!-- Блок кнопки подключиться
+============================================= -->
+{% block bth_connect %}
+{% endblock %}<!-- Конец кнопки подключиться-->
+
+{% block zona_oh %}  <!-- Зона охвата сети -->
+
+{% endblock %}

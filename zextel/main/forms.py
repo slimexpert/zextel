@@ -17,7 +17,7 @@ class ContactForm(forms.Form):
 	tel.widget.attrs.update({'class':'form-control required', 'placeholder':'+7(000)000 00 00'})
 	cat.widget.attrs.update({'class':'form-control required'})
 	text.widget.attrs.update({'class':'form-control required', 'col':'30', 'rows':'5'})
-#	otvet.widget.attrs.update({'class':'btn btn-outline-secondary ls0 nott'})
+	otvet.widget.attrs.update({'class':'btn btn-outline-secondary ls0 nott'})
 
 	def clean_text(self):
 		new_text = self.cleaned_data['text']
