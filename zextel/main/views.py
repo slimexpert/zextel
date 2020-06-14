@@ -77,10 +77,13 @@ class SendConnect(View):
 			telefon = request.POST['phone']
 			if request.POST.get('rate', False):
 				rate = request.POST['rate']
-				rate_odj = Rate.objects.get(id=rate)
-				rate_title = rate_odj.rate_title +' '+ rate_odj.rate_title_text
+				if rate == '0':
+					rate_title = 'Не указан'
+				else:
+					rate_odj = Rate.objects.get(id=rate)
+					rate_title = rate_odj.rate_title +' '+ rate_odj.rate_title_text
 			else:
-				rate = 'Не указан'
+				rate_title = 'Не указан'
 			if request.POST.get('stock', False):
 				stock = request.POST['stock']
 			else:
@@ -127,7 +130,7 @@ class connect(View):
 		if request.GET.get('rate', False):
 			rate = str(request.GET['rate'])
 		else:
-			rate = 'Не указан'
+			rate = 0
 		if request.GET.get('stock', False):
 			stock = stock_valid(str(request.GET['stock']))
 		else:

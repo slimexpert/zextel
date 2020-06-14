@@ -51,14 +51,13 @@
       <nav id="primary-menu" class="style-4">
         <ul>
           <li><a href="/"><div>Интернет</div></a></li>
-          <li><a href="/tv"><div>Цифровое ТВ</div></a></li>
-          <li class="current"><a href="#"><div>Подключиться</div></a></li>
+          <li class="current"><a href="/tv"><div>Цифровое ТВ</div></a></li>
+          <li><a href="/connect""><div>Подключиться</div></a></li>
           <li><a href="/stock"><div>Предожения</div></a></li>
           <li><a href="/payment"><div>Оплата</div></a></li>
           <li><a href="http://stat.zextel.ru/" target="_blank"><div>Личный кабинет</div></a></li>
         </ul>
        </nav><!-- #primary-menu end -->
-
     </div>
   </div>
 </header>
@@ -70,10 +69,10 @@
 {% block page_title %}
   <section id="page-title">
   	<div class="container clearfix">
-  		<h1>Подключение</h1>
+  		<h1>Цифровое телевидение</h1>
    		<ol class="breadcrumb">
   			<li class="breadcrumb-item"><a href="/">Главная</a></li>
-  			<li class="breadcrumb-item active" aria-current="page">Подключиться</li>
+  			<li class="breadcrumb-item active" aria-current="page">Цифровое ТВ</li>
   		</ol>
   	</div>
   </section>
@@ -82,46 +81,59 @@
 <!-- Блок контент
 	============================================= -->
 {% block content %}
+
   <div class="container clearfix">
-    <div class="promo promo-border promo-center bottommargin">
-          <h3>Ваша заявка {{ msg }} </h3>
-          <span>Спасибо за обращение в нашу компанию<br /> Наши специалисты свяжуться с вами в ближайшее время </span>
-          <a href="/" class="button button-border button-rounded button-fill fill-from-right button-amber"><span>На главную</span></a>
-          <a href="/stock" class="button button-border button-rounded button-fill fill-from-bottom button-amber"><span>Предожения</span></a>
-          <a href="/payment" class="button button-border button-rounded button-fill fill-from-top button-amber"><span>Оплата</span></a>
-    </div>
+    <div class="container clearfix">
+      <div class="fancy-title title-dotted-border title-center">
+						<h3>Цифровое ТВ для Вашего дома</h3>
+					</div>
+
+					<div class="col_one_third nobottommargin">
+						<div class="feature-box center media-box fbox-bg">
+							<div class="fbox-media">
+								<a href="#"><img class="image_fade" src="https://slimexpert.github.io/zextel/static/images/tv-1.png" alt="100 бесплатных каналов"></a>
+							</div>
+							<div class="fbox-desc">
+								<h3>100 бесплатных каналов<span class="subtitle">В каждом тарифе</span></h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="col_one_third nobottommargin">
+						<div class="feature-box center media-box fbox-bg">
+							<div class="fbox-media">
+								<a href="#"><img class="image_fade" src="https://slimexpert.github.io/zextel/static/images/tvip-tv.png" alt="TVIP Media"></a>
+							</div>
+							<div class="fbox-desc">
+								<h3>IPTV Media<span class="subtitle">Интерактивное IPTV</span></h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="col_one_third col_last nobottommargin">
+						<div class="feature-box center media-box fbox-bg">
+							<div class="fbox-media">
+								<a href="/tv/smotreshka"><img class="image_fade" src="https://slimexpert.github.io/zextel/static/images/smotreshka-tv.png" alt="Смотрёшка"></a>
+							</div>
+							<div class="fbox-desc">
+								<h3>Смотрёшка<span class="subtitle">Новое цифровое телевидение</span></h3>
+							</div>
+						</div>
+					</div>
+  	</div>
+    <br />
 </div>
 
 {% endblock %}<!-- Конец блока контент-->
 
-<!-- Блок новости
-============================================= -->
-{% block news_5 %}
-        <div class="fancy-title title-dotted-border title-center">
-            <h3>Новости</h3>
-        </div>
-        <div class="container clearfix">
-          <div id="oc-fbox" class="owl-carousel fbox-carousel carousel-widget" data-margin="20" data-rewind="True" data-pagi="True" data-loop="True" data-items-xs="1" data-items-md="2" data-items-xl="3">
-            {% for a in news_list %}
-              <div class="oc-item">
-                <div class="card events-meta">
-                  <div class="card-header"><h5 class="mb-0"><i class="icon-calendar3"></i>  {{ a.pub_date }}</h5></div>
-                  <div class="card-body">
-                      <h5>{{ a.new_title }}</h5>
-                      <div>{{ a.new_title_text|safe }}</div>
-                  </div>
-                    <a href="{% url 'about:detail' a.id %}" class="btn btn-light"><span>Подробнее</span></a>
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-        </div>
-{% endblock %}<!-- Конец блока новости-->
+{% block bth_connect %}  <!-- Кнопка подключиться -->
+  <a href="/connect" class="button button-full center tright footer-stick">
+    <div class="container clearfix">
+        <strong>ОСТАВИТЬ ЗАЯВКУ НА ПОДКЛЮЧЕНИЕ</strong> <i class="icon-caret-right" style="top:4px;"></i>
+    </div>
+  </a>
+{% endblock %}
 
-<!-- Блок кнопки подключиться
-============================================= -->
-{% block bth_connect %}
-{% endblock %}<!-- Конец кнопки подключиться-->
 
 {% block zona_oh %}  <!-- Зона охвата сети -->
 

@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+{% block top_menu %}
+    <div id="top-bar">
+      <div class="container clearfix">
+        <div class="col_half nobottommargin">
+          <!-- Top Links
+          ============================================= -->
+          <div class="top-links">
+            <ul>
+              <li><a style="background-color: #EEE;" href="/">Частным клиентам</a></li>
+              <li><a href="/">Для Бизнеса</a></li>
+              <li><a href="/about">О компании</a></li>
+              <li><a href="/contact">Контакты</a></li>
+            </ul>
+          </div><!-- .top-links end -->
+
+        </div>
+
+        <div class="col_half fright col_last nobottommargin">
+          <!-- Top Social
+          ============================================= -->
+          <div id="top-social">
+            <ul>
+              <li><a href="tel:+78124485323" class="si-call"><span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+7 (812) 4485323</span></a></li>
+              <li><a href="mailto:info@zextel.ru" class="si-email3"><span class="ts-icon"><i class="icon-email3"></i></span><span class="ts-text">info@zextel.ru</span></a></li>
+            </ul>
+          </div><!-- #top-social end -->
+        </div>
+      </div>
+    </div>
+{% endblock %}<!-- #конец top_menu-->
+
+
+<!-- Header
+    ============================================= -->
+{% block header_menu %}
+<header id="header" class="full-header">
+  <div id="header-wrap">
+    <div class="container clearfix">
+      <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+      <!-- Logo
+      ============================================= -->
+      <div id="logo">
+        <a href="/" class="standard-logo" data-dark-logo="https://slimexpert.github.io/zextel/static/images/logo-dark.png"><img src="https://slimexpert.github.io/zextel/static/images/logo-dark.png" alt="Canvas Logo"></a>
+        <a href="/" class="retina-logo" data-dark-logo="https://slimexpert.github.io/zextel/static/images/logo-dark@2x.png"><img src="https://slimexpert.github.io/zextel/static/images/logo-dark@2x.png" alt="Canvas Logo"></a>
+      </div><!-- #logo end -->
+
+      <!-- Primary Navigation
+      ============================================= -->
+      <nav id="primary-menu" class="style-4">
+        <ul>
+          <li><a href="/"><div>Интернет</div></a></li>
+          <li class="current"><a href="/tv"><div>Цифровое ТВ</div></a></li>
+          <li><a href="/connect"><div>Подключиться</div></a></li>
+          <li><a href="/stock"><div>Предожения</div></a></li>
+          <li><a href="/payment"><div>Оплата</div></a></li>
+          <li><a href="http://stat.zextel.ru/" target="_blank"><div>Личный кабинет</div></a></li>
+        </ul>
+       </nav><!-- #primary-menu end -->
+    </div>
+  </div>
+</header>
+{% endblock %}<!-- #конец header_menu-->
+
+<!-- Блок название страницы
+    ============================================= -->
+
+{% block page_title %}
+  <section id="page-title">
+  	<div class="container clearfix">
+  		<h1>Смотрёшка</h1>
+   		<ol class="breadcrumb">
+  			<li class="breadcrumb-item"><a href="/">Главная</a></li>
+  			<li class="breadcrumb-item active"><a href="/tv">Цифровое ТВ</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Смотрёшка</li>
+  		</ol>
+  	</div>
+  </section>
+{% endblock %}<!-- #конец блока название страниц-->
+
+<!-- Блок контент
+	============================================= -->
+{% block content %}
+
+  <div class="container clearfix">
+    <div class="col_half">
+						<h5>Half Width</h5>
+						Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus.
+					</div>
+
+					<div class="col_half col_last">
+						<h5>Half Width (Last)</h5>
+						Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus.
+					</div>
+
+    <div class="card">
+						<!-- Default panel contents -->
+							<div class="card-header">Тарифы от компании Смотрёшка </div>
+							<div class="card-body">
+								<p class="card-text">Для подключения обратитесь пожалуйста в наш контактный центр по телефону <span>+7(812)4485323</span> или напишите на адрес электроннйо почты info@zexte.ru</p>
+							</div>
+							<!-- Table -->
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>№</th>
+										<th>Наименование услуги</th>
+										<th>Количество каналов</th>
+                    <th>Кол-во устройств</th>
+										<th>Абенетская плата</th>
+                    <th>Список телеканалов</th>
+									</tr>
+								</thead>
+								<tbody>
+                  {% for t in tarif %}
+									<tr>
+										<td>{{ t.id }}</td>
+										<td>{{ t.sm_tarif_title }}</td>
+										<td>{{ t.sm_tarif_count }}<span> каналов(а)</span></td>
+										<td>{{ t.sm_tarif_view }} <span> устройств(а)</span></td>
+                    <td>{{ t.sm_tarif_summ }} <span class="price-unit">&#8381;</span><span class="price-tenure">/мес.</span></td>
+                    <td><a href="" data-toggle="modal" data-target="#modal{{ t.id }}" >Список</a></td>
+									</tr>
+                  {% endfor %}
+								</tbody>
+							</table>
+						</div>
+
+            <br /><br /><br />
+</div>
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+							<div class="modal-dialog">
+								<div class="modal-body">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h4 class="modal-title" id="myModalLabel">Смотрёшка - Комбо Лайт 163 канала</h4>
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+										</div>
+										<div class="modal-body">
+
+
+                    </div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+{% endblock %}<!-- Конец блока контент-->
+
+{% block bth_connect %}  <!-- Кнопка подключиться -->
+  <a href="/connect" class="button button-full center tright footer-stick">
+    <div class="container clearfix">
+        <strong>ОСТАВИТЬ ЗАЯВКУ НА ПОДКЛЮЧЕНИЕ</strong> <i class="icon-caret-right" style="top:4px;"></i>
+    </div>
+  </a>
+{% endblock %}
+
+
+{% block zona_oh %}  <!-- Зона охвата сети -->
+
+{% endblock %}

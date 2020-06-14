@@ -50,6 +50,7 @@ DADATA_SECRET = "12c55363707c3aae468de4b730edfe761ab05544"
 INSTALLED_APPS = [
     'main',
     'about',
+    'tv',
     'ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',
