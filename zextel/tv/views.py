@@ -10,4 +10,16 @@ def tv(request):
 def smotreshka(request):
     spisok_tarif = sm_tarif.objects.all()
     spisok_ch = sm_spisok_ch.objects.all()
-    return render(request, 'tv/smotreshka.html', {'tarif': spisok_tarif})
+    spisok_ch_id = []
+    spisok_dict = {}
+    for tar in spisok_tarif:
+        for sp in spisok_ch:
+            if sp.sm_spisok_title == tar.id:
+                spisok_ch_id.append(sp.sm_channel_id)
+        spisok_dict[tar.sm_tarif_title] = spisok_ch_id
+
+
+    return render(request, 'tv/smotreshka.html', {'tarif': spisok_tarif, 'channel': spisok_dict})
+
+def channel100(request):
+    return render(request, 'tv/channel100.html')

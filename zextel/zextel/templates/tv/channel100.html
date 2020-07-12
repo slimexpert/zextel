@@ -52,7 +52,7 @@
         <ul>
           <li><a href="/"><div>Интернет</div></a></li>
           <li class="current"><a href="/tv"><div>Цифровое ТВ</div></a></li>
-          <li><a href="/connect""><div>Подключиться</div></a></li>
+          <li><a href="/connect"><div>Подключиться</div></a></li>
           <li><a href="/stock"><div>Предожения</div></a></li>
           <li><a href="/payment"><div>Оплата</div></a></li>
           <li><a href="http://stat.zextel.ru/" target="_blank"><div>Личный кабинет</div></a></li>
@@ -69,10 +69,11 @@
 {% block page_title %}
   <section id="page-title">
   	<div class="container clearfix">
-  		<h1>Цифровое телевидение</h1>
+  		<h1>100 каналов</h1>
    		<ol class="breadcrumb">
   			<li class="breadcrumb-item"><a href="/">Главная</a></li>
-  			<li class="breadcrumb-item active" aria-current="page">Цифровое ТВ</li>
+  			<li class="breadcrumb-item active"><a href="/tv">Цифровое ТВ</a></li>
+        <li class="breadcrumb-item active" aria-current="page">100 каналов</li>
   		</ol>
   	</div>
   </section>
@@ -83,45 +84,46 @@
 {% block content %}
 
   <div class="container clearfix">
-    <div class="container clearfix">
-      <div class="fancy-title title-dotted-border title-center">
-						<h3>Цифровое ТВ для Вашего дома</h3>
-					</div>
 
-					<div class="col_one_third nobottommargin">
-						<div class="feature-box center media-box fbox-bg">
-							<div class="fbox-media">
-								<a href="/tv/channel100"><img class="image_fade" src="https://slimexpert.github.io/zextel/static/images/tv-1.png" alt="100 бесплатных каналов"></a>
-							</div>
-							<div class="fbox-desc">
-								<h3>100 бесплатных каналов<span class="subtitle">В каждом тарифе</span></h3>
+    <div class="row nopadding align-items-stretch ohidden">
+			<div class="col-lg-6 col-padding" style="background: url('https://slimexpert.github.io/zextel/static/images/tv-1.png') center center no-repeat; background-size: cover;">
+						<div>&nbsp;</div>
+		</div>
+					<div class="col-lg-6 col-padding">
+						<div>
+							<h3>100 каналов бесплатно на всех тарифах</h3>
+							<div class="row">
+								<div class="col-md-9 nopadding topmargin-sm clearfix">
+                  <div class="feature-box fbox-outline fbox-border fbox-dark fbox-effect noborder">
+                    <div class="fbox-icon">
+                      <a href="/connect/"><i class="icon-line2-action-redo i-alt"></i></a>
+                        </div>
+                        <h3>Подайте заявку!</h3>
+                        <p>По телефону +7(812) 4485323 и смотри бесплатно 100 каналов</p>
+                  </div>
+                  <div class="feature-box fbox-outline fbox-border fbox-dark fbox-effect noborder">
+                    <div class="fbox-icon">
+                      <a href="#"><i class="icon-line-eye i-alt"></i></a>
+                        </div>
+                        <h3>Смотри на любом устройстве!</h3>
+                        <p>Загружай приложение TVIP media и смотри ТВ-контент в HD качестве на большом экране</p>
+                  </div>
+                  <div class="feature-box fbox-outline fbox-border fbox-dark fbox-effect noborder">
+                    <div class="fbox-icon">
+                      <a href="#"><i class="icon-line-layers i-alt"></i></a>
+                        </div>
+                        <h3>Пауза, перемотка и отложенный просмотр</h3>
+                        <p>Пауза поможет приостановить передачу, а перемотка вернёт к нужному моменту.</p>
+                  </div>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="col_one_third nobottommargin">
-						<div class="feature-box center media-box fbox-bg">
-							<div class="fbox-media">
-								<a href="#"><img class="image_fade" src="https://slimexpert.github.io/zextel/static/images/tvip-tv.png" alt="TVIP Media"></a>
-							</div>
-							<div class="fbox-desc">
-								<h3>IPTV Media<span class="subtitle">Интерактивное IPTV</span></h3>
-							</div>
-						</div>
 					</div>
+		</div>
 
-					<div class="col_one_third col_last nobottommargin">
-						<div class="feature-box center media-box fbox-bg">
-							<div class="fbox-media">
-								<a href="/tv/smotreshka"><img class="image_fade" src="https://slimexpert.github.io/zextel/static/images/smotreshka-tv.png" alt="Смотрёшка"></a>
-							</div>
-							<div class="fbox-desc">
-								<h3>Смотрёшка<span class="subtitle">Новое цифровое телевидение</span></h3>
-							</div>
-						</div>
-					</div>
-  	</div>
-    <br />
+
+<br /><br />
 </div>
 
 {% endblock %}<!-- Конец блока контент-->

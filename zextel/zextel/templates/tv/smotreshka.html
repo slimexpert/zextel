@@ -85,15 +85,20 @@
 
   <div class="container clearfix">
     <div class="col_half">
-						<h5>Half Width</h5>
-						Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus.
+						<h3>СОВЕРШЕННО НОВОЕ ТЕЛЕВИДЕНИЕ</h3>
+            <ul class="iconlist">
+								<li><i class="icon-line-arrow-right"></i><a href="https://smotreshka.tv/about-us/about" target="_blank"> ЧТО ТАКОЕ СМОТРЁШКА</a></li>
+								<li><i class="icon-line-arrow-right"></i><a href="https://smotreshka.tv/channels" target="_blank"> ЧТО ПОСМОТРЕТЬ </a></li>
+								<li><i class="icon-line-arrow-right"></i><a href="https://smotreshka.tv/my_tv" target="_blank"> НА SMART TV</a></li>
+								<li><i class="icon-line-arrow-right"></i><a href="https://smotreshka.tv/vod" target="_blank"> КИНОТЕАТР </a></li>
+                <li><i class="icon-line-arrow-right"></i><a href="https://ask.smotreshka.tv/" target="_blank"> СООБЩЕСТВО СМОТРЁШКА </a></li>
+							</ul>
 					</div>
 
 					<div class="col_half col_last">
-						<h5>Half Width (Last)</h5>
-						Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus.
+						<img class="image_fade" src="https://slimexpert.github.io/zextel/static/images/smotreshka-tv2.png" alt="Смотрёшка">
 					</div>
-
+<div class="col_full">
     <div class="card">
 						<!-- Default panel contents -->
 							<div class="card-header">Тарифы от компании Смотрёшка </div>
@@ -126,28 +131,32 @@
 								</tbody>
 							</table>
 						</div>
-
-            <br /><br /><br />
 </div>
-<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-							<div class="modal-dialog">
-								<div class="modal-body">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h4 class="modal-title" id="myModalLabel">Смотрёшка - Комбо Лайт 163 канала</h4>
-											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-										</div>
-										<div class="modal-body">
+            <br /><br />
 
+</div>
 
-                    </div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-										</div>
-									</div>
+{% for key in channel.items %}
+<div class="modal fade" id="#modal{{forloop.counter}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+				<div class="modal-body">
+						<div class="modal-content">
+								<div class="modal-header">
+										<h4 class="modal-title" id="myModalLabel">Смотрёшка каналов(а)</h4>
+										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 								</div>
-							</div>
-						</div>
+								<div class="modal-body">
+                      	<img class="grayscale" data-toggle="tooltip" src="https://slimexpert.github.io/zextel/static/sm_channel/1.jpg" width="10%" alt="">
+                </div>
+								<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+								</div>
+					</div>
+			</div>
+    </div>
+</div>
+{% endfor %}
+
 {% endblock %}<!-- Конец блока контент-->
 
 {% block bth_connect %}  <!-- Кнопка подключиться -->
