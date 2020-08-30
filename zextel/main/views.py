@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import slider, contact_support, zone, Rate
 from about.models import new
-from .forms import ContactForm
+from .forms import ContactForm, PaymentForm
 from django.views.generic import View
 from django.core.mail import send_mail
 import requests
@@ -52,9 +52,7 @@ class ContactSupport(View):
 		form = ContactForm()
 		if bount_form.is_valid():
 			new_contact = bount_form.save()
-			print('прошла валидация')
 			return redirect(new_contact)
-		print('не прошла валидация')
 		return render(request, 'main/contact.html', {'form':bount_form})
 
 class SendConnect(View):
@@ -101,12 +99,9 @@ class SendConnect(View):
 			msg = 'успешно отправлена'
 			req = requests.get(url+'sendMessage?chat_id=-1001193659934&text='+message_telegramm+'&parse_mode=Markdown')
 			return render(request, 'main/send.html', {'msg': msg,})
-
-		а = 'пост не отправлена'
 		return render(request, 'main/send.html', {'msg': msg,})
 
 	def get(self,request):
-		msg = 'ГЕТ не отправлена'
 		return render(request, 'main/send.html', {'msg': msg,})
 
 class connect(View):
@@ -139,5 +134,26 @@ class connect(View):
 			promo = str(request.GET['promo'])
 		else:
 			promo = 'Не указан'
-
 		return render(request, 'main/connect.html', {'news_list': news_list, 'stock': stock, 'promo': promo, 'address_show': address_show, 'rate': rate})
+
+class payment(View):
+	def get(self, request):
+		return render(request, 'main/payment.html')
+
+class cards_payment(View):
+	def get(self, request):
+		form = PaymentForm()
+		return render(request, 'main/cards_payment.html', {'form':form})
+	def post(self, request):
+		uid = request.POST['uid']
+		summ = request.POST['summ']
+		mrh_login = 'zextel.ru'
+		mrh_pass1 = 'M7Xe1dLmiG9WTbOco31z'
+		inv_desc = 'Пополнение счета с сайта ' + str(uid)
+		url = 'http://pst2.zextel.ru/index.php'
+		itog = url + '?MrchLogin=' + mrh_login + '&OutSum=' + str(summ) + '&Desc=' + inv_desc + '&shp_uid' + str(uid)
+		return redirect(itog)
+
+class spec_stock(View):
+	def get(self, request):
+		return redirect('/')

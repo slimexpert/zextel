@@ -36,3 +36,10 @@ class ContactForm(forms.Form):
 		supp_otvet=self.cleaned_data['otvet'],
 		)
 		return new_contact_support
+
+class PaymentForm(forms.Form):
+	uid = forms.IntegerField(min_value=0)
+	summ = forms.IntegerField(min_value=10)
+
+	uid.widget.attrs.update({'class':'form-control required', 'placeholder':'Номер договора (логин)'})
+	summ.widget.attrs.update({'class':'form-control required', 'placeholder':'Сумма'})

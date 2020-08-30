@@ -8,10 +8,10 @@
           ============================================= -->
           <div class="top-links">
             <ul>
-              <li><a href="/">Частным клиентам</a></li>
+              <li><a  style="background-color: #EEE;" href="/">Частным клиентам</a></li>
               <li><a href="/">Для Бизнеса</a></li>
               <li><a href="/about">О компании</a></li>
-              <li><a style="background-color: #EEE;"  href="/contact">Контакты</a></li>
+              <li><a href="/contact">Контакты</a></li>
             </ul>
           </div><!-- .top-links end -->
 
@@ -50,11 +50,11 @@
           ============================================= -->
           <nav id="primary-menu" class="style-4">
             <ul>
-              <li class="current"><a href="/"><div>Интернет</div></a></li>
+              <li><a href="/"><div>Интернет</div></a></li>
               <li><a href="/tv"><div>Цифровое ТВ+</div></a></li>
               <li><a href="/connect"><div>Подключиться</div></a></li>
               <li><a href="/stock"><div>Предложения</div></a></li>
-              <li><a href="/payment"><div>Оплата</div></a></li>
+              <li class="current"><a href="/payment"><div>Оплата</div></a></li>
               <li><a href="http://stat.zextel.ru/" target="_blank"><div>Личный кабинет</div></a></li>
             </ul>
            </nav><!-- #primary-menu end -->
@@ -70,10 +70,11 @@
 {% block page_title %}
   <section id="page-title">
   	<div class="container clearfix">
-  		<h1>Контакты</h1>
+  		<h1>Оплата Банковской картой</h1>
    		<ol class="breadcrumb">
   			<li class="breadcrumb-item"><a href="/">Главная</a></li>
-  			<li class="breadcrumb-item active" aria-current="page">Контакты</li>
+  			<li class="breadcrumb-item"><a href="/payment">Оплата</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Банковской картой</li>
   		</ol>
   	</div>
   </section>
@@ -82,61 +83,26 @@
 <!-- Блок контент
 	============================================= -->
 {% block content %}
-
 <div class="container clearfix">
-  <!--<div class="promo promo-border promo-full bottommargin">
-        <div class="container clearfix">
-          <h3>Уважаемые абоненты</h3>
-          <span>В связи со сложившийся ситуацией, до 12 мая наш офис закрыт на прием платежей <br /> и заключения договоров.</span>
-          <a href="#" class="button button-xlarge button-rounded">Оплатить</a>
-        </div> -->
-
     <div class="col_half">
       <div class="fancy-title title-dotted-border">
-        <h3>Написать нам</h3>
+        <h3>Пополнение БАНКОВСКОЙ КАРТОЙ</h3>
       </div>
       <div class="leftmargin-sm">
         <div class="form-widget">
           <div class="row">
-            <form  class="row" action="{% url 'main:contact_support_url' %}" method="post">
+            <form  class="row" action="{% url 'main:cards_payment_url' %}" method="POST">
               {% csrf_token %}
               <div class="col-12 form-group">
-                <label>Ваше имя:</label>
-                {{ form.name }}
+                <label>Номер договора:</label>
+                {{ form.uid }}
               </div>
               <div class="col-12 form-group">
-                <div class="row">
-                  <div class="col-md-6 form-group">
-                    <label>E-mail:</label>
-                      {{ form.email }}
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <label>Телефон:</label>
-                    {{ form.tel }}
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 form-group">
-                <label>Тема обращения:</label>
-                {{ form.cat }}
-              </div>
-              <div class="col-12 form-group">
-                <label>Текст вашего обращения:</label>
-                    {{ form.text }}
-              </div>
-              <div class="col-12 form-group">
-                <label>Как лучше с Вами связаться:</label>
-                  <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons">
-                    {% for radio in form.otvet %}
-                      <label class="btn btn-outline-secondary ls0 nott">
-                        {{ radio.choice_label }}
-                        {{ radio.tag }}
-                      </label>
-                    {% endfor %}
-                  </div>
+                <label>Сумма:</label>
+                {{ form.summ }}
               </div>
               <div class="col-12">
-										<button type="submit" class="btn btn-secondary">Отправить сообщение</button>
+										<button type="submit" class="btn btn-secondary">Оплатить</button>
 							</div>
             </form>
           </div>
@@ -145,13 +111,14 @@
     </div>
     <div class="col_half col_last">
       <div class="fancy-title title-dotted-border">
-        <h3>Мы всегда рады видеть Вас, у нас в офисе</h3>
+        <h3>Информация</h3>
       </div>
-      <p>По адресу: Всеволожский р-н, п. Романовка, д. 20 (центральный вход)</p>
-      <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A8d7c45fa63aa3e58f7f246b674d0103a8b7695eaabb4a923c3b9e013cb3912de&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=true"></script>
-
+        <p>Для облаты банковской картой введите в соотвествующие поля с лева <br /> "Номер договора" и "Cумму" на которую Вы хотите пополнить.</p>
+        <p>Номер договора состоит из 4 цифр, если в Ваш номер договора 346 то вводить необходимо 0346 </p>
+        <h5>Уважаемы абоненты будте внимательны при вводе номера договора.</h5>
     </div>
   </div>
+
 {% endblock %}<!-- Конец блока контент-->
 
 {% block zona_oh %}  <!-- Зона охвата сети -->
