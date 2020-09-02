@@ -60,7 +60,6 @@ class SendConnect(View):
 	    params = {'chat_id': chat, 'text': text}
 	    response = requests.post(url + 'sendMessage', data=params)
 	    return response
-
 	def post(self, request):
 		if request.method == 'POST':
 			url = 'https://api.telegram.org/bot862407227:AAHQf3fBAKpPzceomL112WmZJF2UARz3iqA/'

@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block top_menu %}
+    <div id="top-bar">
+      <div class="container clearfix">
+        <div class="col_half nobottommargin">
+          <!-- Top Links
+          ============================================= -->
+          <div class="top-links">
+            <ul>
+              <li><a style="background-color: #EEE;"  href="/">Частным клиентам</a></li>
+              <li><a href="/">Для Бизнеса</a></li>
+              <li><a href="/about">О компании</a></li>
+              <li><a href="/contact">Контакты</a></li>
+            </ul>
+          </div><!-- .top-links end -->
+
+        </div>
+
+        <div class="col_half fright col_last nobottommargin">
+          <!-- Top Social
+          ============================================= -->
+          <div id="top-social">
+            <ul>
+              <li><a href="tel:+78124485323" class="si-call"><span class="ts-icon"><i class="icon-call"></i></span><span class="ts-text">+7 (812) 4485323</span></a></li>
+              <li><a href="mailto:info@zextel.ru" class="si-email3"><span class="ts-icon"><i class="icon-email3"></i></span><span class="ts-text">info@zextel.ru</span></a></li>
+            </ul>
+          </div><!-- #top-social end -->
+        </div>
+      </div>
+    </div>
+{% endblock %}<!-- #конец top_menu-->
+
+
+<!-- Header
+    ============================================= -->
+{% block header_menu %}
+    <header id="header" class="full-header">
+      <div id="header-wrap">
+        <div class="container clearfix">
+          <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+          <!-- Logo
+          ============================================= -->
+          <div id="logo">
+            <a href="/" class="standard-logo" data-dark-logo="https://slimexpert.github.io/zextel/static/images/logo-dark.png"><img src="https://slimexpert.github.io/zextel/static/images/logo-dark.png" alt="Canvas Logo"></a>
+            <a href="/" class="retina-logo" data-dark-logo="https://slimexpert.github.io/zextel/static/images/logo-dark@2x.png"><img src="https://slimexpert.github.io/zextel/static/images/logo-dark@2x.png" alt="Canvas Logo"></a>
+          </div><!-- #logo end -->
+
+          <!-- Primary Navigation
+          ============================================= -->
+          <nav id="primary-menu" class="style-4">
+            <ul>
+              <li><a href="/"><div>Интернет</div></a></li>
+              <li><a href="/tv"><div>Цифровое ТВ+</div></a></li>
+              <li><a href="/connect"><div>Подключиться</div></a></li>
+              <li><a href="/stock"><div>Предложения</div></a></li>
+              <li class="current"><a href="/payment"><div>Оплата</div></a></li>
+              <li><a href="http://stat.zextel.ru/" target="_blank"><div>Личный кабинет</div></a></li>
+            </ul>
+           </nav><!-- #primary-menu end -->
+
+        </div>
+      </div>
+    </header>
+{% endblock %}<!-- #конец header_menu-->
+
+<!-- Блок название страницы
+    ============================================= -->
+
+{% block page_title %}
+  <section id="page-title">
+  	<div class="container clearfix">
+  		<h1>Оплата</h1>
+   		<ol class="breadcrumb">
+  			<li class="breadcrumb-item"><a href="/">Главная</a></li>
+  			<li class="breadcrumb-item active" aria-current="page">Оплата</li>
+  		</ol>
+  	</div>
+  </section>
+{% endblock %}<!-- #конец блока название страниц-->
+
+<!-- Блок контент
+	============================================= -->
+{% block content %}
+<div class="container clearfix">
+  <div class="col_one_third">
+    <div class="heading-block fancy-title nobottomborder title-bottom-border">
+      <h4>Банковской<span> картой</span>.</h4>
+		</div>
+			<p>Самый простой и удобный способ оплаты, Введите номер договора (логин) и сумму которую Вы хотите оплатить и оплачивайте быстро и без комиссии. <br /><a href="/cards_payment">ОПЛАТА БАНКОВСКОЙ КАРТОЙ</a></p>
+	</div>
+	<div class="col_one_third">
+    <div class="heading-block fancy-title nobottomborder title-bottom-border">
+		  <h4>Сбербанк<span> Онлайн</span>.</h4>
+	  </div>
+		   <p>Перейдет на сайт Сбербанк Онлайн. Войдите в свой личный кабинет. "Переводы и платежи" -> "Оплата покупок и услуг" (выберете регион "ЛЕНИНГРАДСКАЯ ОБЛАСТЬ Г САНКТ-ПЕТЕРБУРГ
+") и в поисковой строке наберите "Zextel" далее следуйте инструкциям по оплате. Лицевой счет это Ваш номер договора (логин). Комиссия не взимается. </p>
+	</div>
+	<div class="col_one_third col_last">
+    <div class="heading-block fancy-title nobottomborder title-bottom-border">
+			<h4>Оплата <span>наличными</span>.</h4>
+		</div>
+			<p>Оплату наличными Вы можете в терминале платежной системы "Кассира.нет". ВНИМАНИЕ! ОПЛАТА ПРОИЗВОДИТЬСЯ С КОММИСИЕЙ! <a href="http://www.pscb.ru/locations/terminals/" target="_blank">Адреса терминалов </a>. Незабудьте выбрать регион Ленинградская область. </p>
+	</div>
+  <div class="col_one_third ">
+    <div class="heading-block fancy-title nobottomborder title-bottom-border">
+			<h4>Оплата в<span> личном кабинете</span>.</h4>
+		</div>
+			<p>Перейдите в личный кабинет<br /> <a href="http://stat.zextel.ru/login" target="_blank">ЛИЧНЫЙ КАБИНЕТ</a>. <br />Выбирете пункт меню "Оплата", введите сумму и нажмите "Оплатить". Комиссия не взимается. </p>
+	</div>
+</div>
+
+{% endblock %}<!-- Конец блока контент-->
+
+{% block zona_oh %}  <!-- Зона охвата сети -->
+
+{% endblock %}
